@@ -1,0 +1,30 @@
+<%= form_for @annual_submission do |f| %>
+  <div>
+    <%= f.label :cv, "CV" %>
+    <%= f.text_field :cv %>
+  </div>
+
+  <div>
+    <%= f.label :artist_statement, "Artist Statement" %>
+    <%= f.text_field :artist_statement %>
+  </div>
+
+  <div>
+    <%= f.label :expo_project, "Expo Project" %>
+    <%= f.text_field :expo_project %>
+  </div>
+
+  <div>
+    <%= f.label :special_needs, "Special Needs" %>
+    <%= f.text_field :special_needs %>
+  </div>
+
+  <div>
+    <%= f.label :image_list, "Image List" %>
+    <%= f.text_field :image_list %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end -%>
