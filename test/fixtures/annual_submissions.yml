@@ -6,7 +6,7 @@ one:
   expo_project: MyString
   special_needs: MyString
   image_list: MyString
-  artist_id: 
+  user: paula
 
 two:
   cv: MyString
@@ -14,4 +14,4 @@ two:
   expo_project: MyString
   special_needs: MyString
   image_list: MyString
-  artist_id: 
+  user: ahmed

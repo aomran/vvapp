@@ -35,5 +35,7 @@ class AnnualSubmissionsTest < Capybara::Rails::TestCase
     end
 
     assert page.has_content?("Your Submission has been received!"), 'Notice about submission received not shown'
+
+    assert_equal users(:paula).annual_submissions.last, AnnualSubmission.last
   end
 end

@@ -3,7 +3,7 @@ class AnnualSubmissionsController < ApplicationController
   before_action :check_user_login, only: [:new]
 
   def index
-
+    @annual_submissions = AnnualSubmission.all
   end
 
   def new
@@ -11,7 +11,8 @@ class AnnualSubmissionsController < ApplicationController
   end
 
   def create
-    @annual_submission = AnnualSubmission.new(annual_submission_params)
+    @user = User.find(session[:user_id])
+    @annual_submission = @user.annual_submissions.build(annual_submission_params)
 
     @annual_submission.save
     redirect_to annual_submissions_path, notice: "Your Submission has been received!"

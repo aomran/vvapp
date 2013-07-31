@@ -13,7 +13,7 @@ paula:
   country: Canada
   password_digest: <%= BCrypt::Password.create("password123")%>
 
-two:
+ahmed:
   first_name: MyString
   last_name: MyString
   email: MyString
