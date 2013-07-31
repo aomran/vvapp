@@ -1,16 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
-  gender: MyString
-  phone_number: MyString
-  street_address: MyString
-  city: MyString
-  province: MyString
-  postal_code: MyString
-  country: MyString
+paula:
+  first_name: Paula
+  last_name: Lilfrenchy
+  email: paula@Lilfrenchy.com
+  gender: Female
+  phone_number: (819)667-3467
+  street_address: 123 street rd.
+  city: Ottawa
+  province: Ontraio
+  postal_code: K1V2H3
+  country: Canada
+  password_digest: <%= BCrypt::Password.create("password123")%>
 
 two:
   first_name: MyString

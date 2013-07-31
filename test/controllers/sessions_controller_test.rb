@@ -1,9 +1,11 @@
 require 'test_helper'
 
 class SessionsControllerTest < ActionController::TestCase
-  test "should get create" do
-    get :create
-    assert_response :success
+  test "should login user" do
+    post :create, { email: users(:paula).email, password: 'password123', password_confirmation: 'password123' }
+
+    assert_equal session[:user_id], users(:paula).id
+    assert_redirected_to user_path(users(:paula))
   end
 
 end

@@ -1,7 +1,7 @@
 Vvapp::Application.routes.draw do
   resources :users
 
-  get "sessions/create"
+  post "sessions", to: "sessions#create"
   resources :annual_submissions
 
   get "/login", to: "sessions#new", as: "login"
