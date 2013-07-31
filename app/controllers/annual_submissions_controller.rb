@@ -1,0 +1,2 @@
+class AnnualSubmissionsController < ApplicationController
+end

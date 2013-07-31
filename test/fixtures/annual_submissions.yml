@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cv: MyString
+  artist_statement: MyString
+  expo_project: MyString
+  special_needs: MyString
+  image_list: MyString
+  artist_id: 
+
+two:
+  cv: MyString
+  artist_statement: MyString
+  expo_project: MyString
+  special_needs: MyString
+  image_list: MyString
+  artist_id: 
