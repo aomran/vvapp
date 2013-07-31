@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130731020857) do
+ActiveRecord::Schema.define(version: 20130731153148) do
 
   create_table "annual_submissions", force: true do |t|
     t.string   "cv"
@@ -26,5 +26,20 @@ ActiveRecord::Schema.define(version: 20130731020857) do
   end
 
   add_index "annual_submissions", ["artist_id"], name: "index_annual_submissions_on_artist_id"
+
+  create_table "users", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "gender"
+    t.string   "phone_number"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "province"
+    t.string   "postal_code"
+    t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

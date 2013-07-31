@@ -1,5 +1,7 @@
 class AnnualSubmissionsController < ApplicationController
 
+  before_action :check_user_login, only: [:new]
+
   def index
 
   end
@@ -18,5 +20,13 @@ class AnnualSubmissionsController < ApplicationController
   private
   def annual_submission_params
     params.require(:annual_submission).permit(:cv, :artist_statement, :expo_project, :special_needs, :image_list)
+  end
+
+  def check_user_login
+    if session[:user_id]
+      @current_user = User.find(session[:user_id])
+    else
+      redirect_to login_path, notice: 'Please signup or login before making an annual submission'
+    end
   end
 end

@@ -1,6 +1,11 @@
 Vvapp::Application.routes.draw do
+  resources :users
+
+  get "sessions/create"
   resources :annual_submissions
 
+  get "/login", to: "sessions#new", as: "login"
+  get "/register", to: "users#new", as: "register"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -41,7 +46,7 @@ Vvapp::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
