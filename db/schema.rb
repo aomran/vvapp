@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130731184021) do
+ActiveRecord::Schema.define(version: 20130801181823) do
 
-  create_table "annual_submissions", force: true do |t|
+  create_table "submissions", force: true do |t|
     t.string   "cv"
     t.string   "artist_statement"
     t.string   "expo_project"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20130731184021) do
     t.integer  "user_id"
   end
 
-  add_index "annual_submissions", ["user_id"], name: "index_annual_submissions_on_user_id"
+  add_index "submissions", ["user_id"], name: "index_submissions_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "first_name"

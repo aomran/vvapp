@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AnnualSubmissionTest < ActiveSupport::TestCase
+class SubmissionTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

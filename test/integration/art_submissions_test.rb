@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AnnualSubmissionsTest < Capybara::Rails::TestCase
+class ArtSubmissionsTest < Capybara::Rails::TestCase
 
   def login_as(user)
     visit login_path
@@ -10,19 +10,18 @@ class AnnualSubmissionsTest < Capybara::Rails::TestCase
   end
 
 
-  test "not logged in artist cannot make annual submissions" do
+  test "not logged in artist cannot make submissions" do
 
-    visit new_annual_submission_path
+    visit new_submission_path
 
     assert current_path == login_path, 'Not at login page'
-
-    assert page.has_content?('Please signup or login before making an annual submission'), 'Notice about logging in or signing up not found'
+    assert page.has_content?('Please signup or login before making an art submission'), 'Notice about logging in or signing up not found'
   end
 
-  test "logged in artist can make an annual submission" do
+  test "logged in artist can make a submission" do
     login_as(users(:paula))
 
-    visit new_annual_submission_path
+    visit new_submission_path
     fill_in "CV", with: 'cv.pdf'
     fill_in "Artist Statement", with: 'artist_statement.pdf'
     fill_in "Expo Project", with: 'expo_project.pdf'
@@ -30,12 +29,12 @@ class AnnualSubmissionsTest < Capybara::Rails::TestCase
     fill_in "Image List", with: 'image_list.pdf'
 
 
-    assert_difference 'AnnualSubmission.count' do
-      click_button 'Create Annual submission'
+    assert_difference 'Submission.count' do
+      click_button 'Create Submission'
     end
 
     assert page.has_content?("Your Submission has been received!"), 'Notice about submission received not shown'
 
-    assert_equal users(:paula).annual_submissions.last, AnnualSubmission.last
+    assert_equal users(:paula).submissions.last, Submission.last
   end
 end
