@@ -1,0 +1,11 @@
+<h1>Annual Submission for <%= @annual_submission.user.first_name + " " + @annual_submission.user.last_name%></h1>
+
+<h2>Documents</h2>
+
+<ul>
+  <li><%= @annual_submission.cv %></li>
+  <li><%= @annual_submission.artist_statement %></li>
+  <li><%= @annual_submission.expo_project %></li>
+  <li><%= @annual_submission.special_needs %></li>
+  <li><%= @annual_submission.image_list %></li>
+</ul>

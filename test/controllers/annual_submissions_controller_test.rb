@@ -14,4 +14,10 @@ class AnnualSubmissionsControllerTest < ActionController::TestCase
     assert assigns(:annual_submissions)
     assert :success
   end
+
+  test "should get single submission" do
+    get :show, id: annual_submissions(:one).id
+    assert :success
+    assert assigns(:annual_submission)
+  end
 end

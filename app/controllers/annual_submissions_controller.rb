@@ -6,6 +6,10 @@ class AnnualSubmissionsController < ApplicationController
     @annual_submissions = AnnualSubmission.all
   end
 
+  def show
+    @annual_submission = AnnualSubmission.find(params[:id])
+  end
+
   def new
     @annual_submission = AnnualSubmission.new
   end
