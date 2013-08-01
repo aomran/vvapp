@@ -19,7 +19,7 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
   end
 
   test "logged in artist can make a submission" do
-    login_as(users(:paula))
+    login_as(users(:bob))
 
     visit new_submission_path
     fill_in "CV", with: 'cv.pdf'
@@ -35,6 +35,14 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
 
     assert page.has_content?("Your Submission has been received!"), 'Notice about submission received not shown'
 
-    assert_equal users(:paula).submissions.last, Submission.last
+    assert_equal users(:bob).submissions.last, Submission.last
+  end
+
+  test "artist can not make more than one submission" do
+    login_as(users(:paula))
+
+    visit new_submission_path
+    assert current_path == profile_path, 'Not redirected to their profile page'
+    assert page.has_content?("You have already made a submission"), 'Error message is not given'
   end
 end

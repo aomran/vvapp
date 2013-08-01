@@ -1,12 +1,13 @@
 Vvapp::Application.routes.draw do
-  resources :users
 
+  resources :users
   resources :submissions
 
   get "/login", to: "sessions#new", as: "login"
   post "/login", to: "sessions#create"
   get '/logout', to: "sessions#destroy"
   get "/register", to: "users#new", as: "register"
+  get '/profile', to: "users#profile"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

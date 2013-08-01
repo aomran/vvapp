@@ -11,7 +11,12 @@ class SubmissionsController < ApplicationController
   end
 
   def new
-    @submission = Submission.new
+    @user = User.find(session[:user_id])
+    if @user.submissions.size == 1
+      redirect_to profile_path, notice: "You have already made a submission"
+    else
+      @submission = Submission.new
+    end
   end
 
   def create

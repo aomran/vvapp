@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :check_user_login, only: [:profile]
+
   def index
     @users = User.all
   end
@@ -16,6 +18,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+  end
+
+  def profile
   end
 
   private

@@ -14,4 +14,13 @@ class UsersControllerTest < ActionController::TestCase
     assert assigns(:users), 'Collection of users not passed to view'
     assert :success
   end
+
+  test "should show profile for current user" do
+    session[:user_id] = users(:paula).id
+
+    get :profile
+
+    assert assigns(:current_user), 'current user object not assigned to view'
+    assert :success
+  end
 end

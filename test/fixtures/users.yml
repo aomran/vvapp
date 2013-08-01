@@ -1,5 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
+bob:
+  first_name: Bob
+  last_name: Bobby
+  email: bob@bobby.com
+  gender: Male
+  phone_number: (819)667-3467
+  street_address: 129 street rd.
+  city: Toronto
+  province: Ontraio
+  postal_code: J1V2H9
+  country: Canada
+  password_digest: <%= BCrypt::Password.create("password123")%>
+
 paula:
   first_name: Paula
   last_name: Lilfrenchy
