@@ -1,6 +1,6 @@
 class SubmissionsController < ApplicationController
 
-  before_action :check_user_login, only: [:new]
+  before_action :check_user_login, only: [:new, :create]
 
   def index
     @submissions = Submission.all
@@ -25,13 +25,5 @@ class SubmissionsController < ApplicationController
   private
   def submission_params
     params.require(:submission).permit(:cv, :artist_statement, :expo_project, :special_needs, :image_list)
-  end
-
-  def check_user_login
-    if session[:user_id]
-      @current_user = User.find(session[:user_id])
-    else
-      redirect_to login_path, notice: 'Please signup or login before making an art submission'
-    end
   end
 end
