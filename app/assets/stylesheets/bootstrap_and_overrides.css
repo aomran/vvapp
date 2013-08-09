@@ -1,0 +1,38 @@
+/*
+  =require twitter-bootstrap-static/bootstrap
+
+  Use Font Awesome icons (default)
+  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
+  =require twitter-bootstrap-static/fontawesome
+  */
+.container {
+  width: 940px;
+}
+.projets h1{
+  font-family: 'Droid Serif';
+  font-size: 50px;
+  letter-spacing: 4px;
+  margin-top: -15px;
+  padding-left: 10px;
+  padding-top: 30px;
+  padding-bottom: 25px;
+  margin-bottom: 5px;
+  text-shadow: #558 2px 2px 4px ;
+  background-color: #fcf9ea;
+}
+
+body{
+
+  color: #666;
+  font-family: 'Helvetica Neue', Arial, Helvetica, 'Nimbus Sans L', sans-serif;
+}
+
+  .navbar-inverse .navbar-inner {background-image: linear-gradient(to bottom, #000, #000);
+  font-size: 16px;
+  padding-left: 650px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  }
+  .navbar-inverse .nav>li>a {
+  color: #bbb;}
