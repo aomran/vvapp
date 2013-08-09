@@ -5,7 +5,7 @@ class SessionsControllerTest < ActionController::TestCase
     post :create, { email: users(:paula).email, password: 'password123'}
 
     assert_equal session[:user_id], users(:paula).id
-    assert_redirected_to user_path(users(:paula))
+    assert_redirected_to profile_path
   end
 
   test "should destroy session" do

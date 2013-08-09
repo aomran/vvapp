@@ -4,9 +4,9 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
 
   def login_as(user)
     visit login_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: 'password123'
-    click_button 'Log In'
+    fill_in 'Courriel', with: user.email
+    fill_in 'Mot de passe', with: 'password123'
+    click_button 'Connexion'
   end
 
 
