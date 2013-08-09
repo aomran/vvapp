@@ -31,3 +31,7 @@ background-image: url("VVlogo1.jpg");
 background-repeat: no-repeat;
 text-indent: 68px;
 }
+
+.navbar-inverse .nav .VVmain {
+margin-left: 250px
+}
