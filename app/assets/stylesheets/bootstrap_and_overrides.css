@@ -27,12 +27,20 @@ body{
   font-family: 'Helvetica Neue', Arial, Helvetica, 'Nimbus Sans L', sans-serif;
 }
 
-  .navbar-inverse .navbar-inner {background-image: linear-gradient(to bottom, #000, #000);
+.navbar-inverse .navbar-inner {background-image: linear-gradient(to bottom, #000, #000);
   font-size: 16px;
   padding-left: 650px;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
-  }
-  .navbar-inverse .nav>li>a {
+}
+.navbar-inverse .nav>li>a {
   color: #bbb;}
+
+.btn-small{margin: 6px;
+  -webkit-box-shadow:  2px 2px 2px #555;
+  -moz-box-shadow:  2px 2px 2px #555;
+  box-shadow: 2px 2px 2px #555;
+}
+  form input {background-color: #888; color: #fff}
+  form label {color: #555; font-weight: bold;}
