@@ -23,14 +23,14 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
 
     visit new_submission_path
     fill_in "CV", with: 'cv.pdf'
-    fill_in "Artist Statement", with: 'artist_statement.pdf'
-    fill_in "Expo Project", with: 'expo_project.pdf'
-    fill_in "Special Needs", with: 'special_needs.pdf'
-    fill_in "Image List", with: 'image_list.pdf'
+    fill_in "Démarche", with: 'artist_statement.pdf'
+    fill_in "Projet", with: 'expo_project.pdf'
+    fill_in "Exigences spéciales (optionelle)", with: 'special_needs.pdf'
+    fill_in "Liste d'Images", with: 'image_list.pdf'
 
 
     assert_difference 'Submission.count' do
-      click_button 'Create Submission'
+      click_button 'Déposer soumission'
     end
 
     assert page.has_content?("Your Submission has been received!"), 'Notice about submission received not shown'
