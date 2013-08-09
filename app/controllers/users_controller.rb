@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :check_user_login, only: [:profile]
+  before_action :check_user_login, only: [:profile, :edit_profile]
 
   def index
     @users = User.all
@@ -22,6 +22,10 @@ class UsersController < ApplicationController
   # end
 
   def profile
+  end
+
+  def edit_profile
+    @user = @current_user
   end
 
   private

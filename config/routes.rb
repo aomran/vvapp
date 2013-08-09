@@ -8,6 +8,8 @@ Vvapp::Application.routes.draw do
   get '/logout', to: "sessions#destroy"
   get "/register", to: "users#new", as: "register"
   get '/profile', to: "users#profile"
+  get '/profile/edit', to: "users#edit_profile", as: "edit_profile"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
