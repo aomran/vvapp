@@ -6,7 +6,7 @@
   =require twitter-bootstrap-static/fontawesome
   */
 .container {
-  width: 940px;
+  /*width: 940px;*/
 }
 .projets h1{
   font-family: 'Droid Serif';
@@ -21,15 +21,15 @@
   background-color: #fcf9ea;
 }
 
-body{
-
+body, form label{
+  font-size: 16px;
   color: #666;
   font-family: 'Helvetica Neue', Arial, Helvetica, 'Nimbus Sans L', sans-serif;
 }
 
 .navbar-inverse .navbar-inner {background-image: linear-gradient(to bottom, #000, #000);
   font-size: 16px;
-  padding-left: 650px;
+  background-image: linear-gradient(to bottom,#222, #334, #111);
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;

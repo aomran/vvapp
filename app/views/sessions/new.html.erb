@@ -1,18 +1,33 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
-<h1>Log In</h1>
-
-<%= form_tag login_path do %>
-  <div>
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email, params[:email] %>
-  </div>
-  <div>
-    <%= label_tag :password %><br />
-    <%= password_field_tag :password %>
-  </div>
-  <div>
-  <%= submit_tag "Log In" %>
-  </div>
+<% if notice %>
+  <p class="notice"><%= notice %></p>
 <% end %>
+
+<% if alert %>
+  <p class="alert"><%= alert %></p>
+<% end %>
+
+<div class="row">
+  <div class="span8 display-content">
+    <h1>Se Connecter</h1>
+
+    <%= form_tag login_path , class: 'form-horizontal' do %>
+      <div class="control-group">
+        <%= label_tag :email, "Courriel", :class => "control-label" %>
+        <div class="controls"><%= text_field_tag :email, params[:email] %></div>
+      </div>
+      <div class="control-group">
+        <%= label_tag :password, "Mot de passe", :class => "control-label" %>
+        <div class="controls"><%= password_field_tag :password %></div>
+      </div>
+      <div class="control-group">
+        <div class="controls"><%= submit_tag "Connexion" %></div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="span4 display-content">
+     <h2>Pas de compte?</h2>
+     <p><a href="/register">Inscrivez-vous</a>, s'il vous plait.
+     </p>
+  </div>
+</div>

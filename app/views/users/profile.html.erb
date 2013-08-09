@@ -1,2 +1,51 @@
-<p class="notice"><%= notice %></p>
-<h1><%= @current_user.first_name + " " + @current_user.last_name%></h1>
+<% if notice %>
+  <p class="notice"><%= notice %></p>
+<% end %>
+
+<h1>Page profile pour <%= @current_user.first_name + " " + @current_user.last_name%></h1>
+
+<div class="table-profile">
+<table class="table table-striped">
+<tr>
+  <td>Courriel: </td>
+  <td> <%= @current_user.email %></td>
+</tr>
+
+<tr>
+  <td>Numéro de téléphone: </td>
+  <td> <%= @current_user.phone_number %></td>
+</tr>
+
+<tr>
+  <td>Adresse de rue: </td>
+  <td> <%= @current_user.street_address %></td>
+</tr>
+
+<tr>
+  <td>Ville: </td>
+  <td> <%= @current_user.city %></td>
+</tr>
+
+<tr>
+  <td>Province: </td>
+  <td> <%= @current_user.province %></td>
+</tr>
+
+<tr>
+  <td>Code Postal: </td>
+  <td> <%= @current_user.postal_code %></td>
+</tr>
+
+<tr>
+  <td>Pays: </td>
+  <td> <%= @current_user.country %></td>
+</tr>
+
+<tr>
+  <td>Femme/Homme radio: </td>
+  <td> <%= @current_user.gender %></td>
+</tr>
+</table>
+</div>
+
+<%= link_to raw('<i class="icon-edit"></i> Editer profile'), edit_profile_path,class: "btn btn-small"  %>

@@ -1,0 +1,67 @@
+    <%= form_for @user, url: url, html: {class: 'form-horizontal'} do |f| %>
+      <div class="control-group">
+        <%= f.label :first_name, "Prénom", :class => "control-label" %>
+        <div class="controls"> <%= f.text_field :first_name %> </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :last_name, "Nom de famille", :class => "control-label" %>
+        <div class="controls"> <%= f.text_field :last_name %> </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :email, "Courriel", :class => "control-label" %>
+        <div class="controls"> <%= f.text_field :email%> </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :password, "Mot de passe", :class => "control-label" %>
+        <div class="controls"> <%= f.password_field :password %> </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :password_confirmation, "Confirmez mot de passe", :class => "control-label" %>
+        <div class="controls"> <%= f.password_field :password_confirmation %> </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :phone_number, "Numéro de téléphone", :class => "control-label" %>
+        <div class="controls"> <%= f.text_field :phone_number %> </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :street_address, "Adresse de rue", :class => "control-label" %>
+        <div class="controls"> <%= f.text_field :street_address %> </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :city, "Ville", :class => "control-label" %>
+        <div class="controls"> <%= f.text_field :city %> </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :province, "Province", :class => "control-label" %>
+        <div class="controls"> <%= f.text_field :province %> </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :postal_code, "Code Postal", :class => "control-label" %>
+        <div class="controls"> <%= f.text_field :postal_code %> </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :country, "Pays", :class => "control-label" %>
+        <div class="controls"> <%= f.text_field :country %> </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :gender, "Femme/Homme radio", :class => "control-label" %>
+        <div class="controls"> <%= f.text_field :gender %> </div>
+      </div>
+
+
+      <div class="control-group">
+        <div class="controls"> <%= f.submit submit_text %> </div>
+      </div>
+
+    <% end %>

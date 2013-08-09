@@ -1,6 +1,6 @@
 Vvapp::Application.routes.draw do
 
-  resources :users
+  resources :users, except: [:show, :edit, :update]
   resources :submissions
 
   get "/login", to: "sessions#new", as: "login"
@@ -8,6 +8,8 @@ Vvapp::Application.routes.draw do
   get '/logout', to: "sessions#destroy"
   get "/register", to: "users#new", as: "register"
   get '/profile', to: "users#profile"
+  get '/profile/edit', to: "users#edit_profile", as: "edit_profile"
+  patch '/profile', to: 'users#update_profile', as: 'update_profile'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

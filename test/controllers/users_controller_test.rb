@@ -2,12 +2,12 @@ require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
 
-  test "should get user" do
-    get :show, id: users(:paula).id
+  # test "should get user" do
+  #   get :show, id: users(:paula).id
 
-    assert assigns(:user)
-    assert :success
-  end
+  #   assert assigns(:user)
+  #   assert :success
+  # end
 
   test "should get list of all users" do
     get :index
