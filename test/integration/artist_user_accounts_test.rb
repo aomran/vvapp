@@ -32,8 +32,7 @@ class ArtistUserAccountsTest < Capybara::Rails::TestCase
   end
 
   test "a logged-in artist can edit their profile" do
-    user = users(:paula)
-    login_as(user)
+    login_as(users(:paula))
     assert current_path == profile_path, 'Not redirected to user profile page'
 
     click_link('Editer profile')
@@ -51,8 +50,10 @@ class ArtistUserAccountsTest < Capybara::Rails::TestCase
     fill_in 'Code Postal', with: 'A8G5H6'
     fill_in 'Pays', with: 'Huebec'
     fill_in 'Femme/Homme radio', with: 'Femme'
-    click_button 'Sauvegardez changements'
+    click_button 'Enregistrer modifications'
 
-    assert user.name == 'PAULA'
+    assert current_path == profile_path
+    user = User.find(users(:paula).id)
+    assert user.first_name == 'PAULA', 'First name was not updated'
   end
 end

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :check_user_login, only: [:profile, :edit_profile]
+  before_action :check_user_login, only: [:profile, :edit_profile, :update_profile]
 
   def index
     @users = User.all
@@ -17,15 +17,16 @@ class UsersController < ApplicationController
     redirect_to profile_path
   end
 
-  # def show
-  #   @user = User.find(params[:id])
-  # end
-
   def profile
   end
 
   def edit_profile
     @user = @current_user
+  end
+
+  def update_profile
+      @current_user.update(user_params)
+      redirect_to profile_path
   end
 
   private
