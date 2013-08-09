@@ -13,12 +13,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.save
-    redirect_to @user
+    session[:user_id] = @user.id
+    redirect_to profile_path
   end
 
-  def show
-    @user = User.find(params[:id])
-  end
+  # def show
+  #   @user = User.find(params[:id])
+  # end
 
   def profile
   end

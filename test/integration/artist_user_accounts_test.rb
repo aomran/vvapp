@@ -21,8 +21,7 @@ class ArtistUserAccountsTest < Capybara::Rails::TestCase
       click_button 'Inscrivez-vous'
     end
 
-    user = User.last
-    assert current_path == user_path(user), 'Not redirected to user profile page'
+    assert current_path == profile_path, 'Not redirected to user profile page'
   end
 
 end

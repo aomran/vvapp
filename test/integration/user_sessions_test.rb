@@ -10,7 +10,7 @@ class UserSessionsTest < Capybara::Rails::TestCase
     click_button 'Connexion'
 
     assert page.has_content?('You are logged in as paula@Lilfrenchy.com'), 'Email of logged in user is not shown'
-    assert current_path == user_path(users(:paula))
+    assert current_path == profile_path
   end
 
   test "artists can't login with wrong password" do

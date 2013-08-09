@@ -1,6 +1,6 @@
 Vvapp::Application.routes.draw do
 
-  resources :users
+  resources :users, except: [:show]
   resources :submissions
 
   get "/login", to: "sessions#new", as: "login"
