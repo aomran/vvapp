@@ -42,5 +42,14 @@ body, form label{
   -moz-box-shadow:  2px 2px 2px #555;
   box-shadow: 2px 2px 2px #555;
 }
+.btn-large {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 0px;
+  margin-left: 150px;
+  -webkit-box-shadow:  3px 3px 5px #333;
+  -moz-box-shadow:  3px 3px 5px #333;
+  box-shadow: 3px 3px 5px #333;
+}
   form input {background-color: #888; color: #fff}
   form label {color: #555; font-weight: bold;}

@@ -1,30 +1,36 @@
-<%= form_for @submission do |f| %>
-  <div>
-    <%= f.label :cv, "CV" %>
-    <%= f.text_field :cv %>
+<h1>Page soumission pour <%= @current_user.first_name + " " + @current_user.last_name%></h1>
+<h2>Faire votre soumission de dossier:</h2>
+<p>Glisser-déposer les documents appropriés dans les boites; en format .doc ou .pdf.</p>
+<p>Toutes les documents sont requis sauf les Exigences spéciales.</p>
+
+<%= form_for @submission, html: {class: 'form-horizontal'} do |f| %>
+
+  <div class="control-group">
+    <%= f.label :cv, "CV", :class => "control-label" %>
+    <div class="controls"><%= f.text_field :cv %> Curriculum vitae (trois pages maximum)</div>
   </div>
 
-  <div>
-    <%= f.label :artist_statement, "Artist Statement" %>
-    <%= f.text_field :artist_statement %>
+  <div class="control-group">
+    <%= f.label :artist_statement, "Démarche", :class => "control-label" %>
+    <div class="controls"><%= f.text_field :artist_statement %> Démarche d'Artiste (un page)</div>
   </div>
 
-  <div>
-    <%= f.label :expo_project, "Expo Project" %>
-    <%= f.text_field :expo_project %>
+  <div class="control-group">
+    <%= f.label :expo_project, "Projet", :class => "control-label" %>
+    <div class="controls"><%= f.text_field :expo_project %> Projet d'Exposition</div>
   </div>
 
-  <div>
-    <%= f.label :special_needs, "Special Needs" %>
-    <%= f.text_field :special_needs %>
+  <div class="control-group">
+    <%= f.label :special_needs, "Exigences spéciales (optionelle)", :class => "control-label" %>
+    <div class="controls"><%= f.text_field :special_needs %> Toute exigence spéciale pour l'installation</div>
   </div>
 
-  <div>
-    <%= f.label :image_list, "Image List" %>
-    <%= f.text_field :image_list %>
+  <div class="control-group">
+    <%= f.label :image_list, "Liste d'Images", :class => "control-label" %>
+    <div class="controls"><%= f.text_field :image_list %></div>
   </div>
 
-  <div>
-    <%= f.submit %>
+  <div class="control-group">
+    <div class="controls"> <%= f.submit "Déposer soumission"%></div>
   </div>
 <% end -%>
