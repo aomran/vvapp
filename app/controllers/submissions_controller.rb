@@ -24,7 +24,7 @@ class SubmissionsController < ApplicationController
     @submission = @user.submissions.build(submission_params)
 
     @submission.save
-    redirect_to submissions_path, notice: "Your Submission has been received!"
+    redirect_to submission_path(@submission), notice: "Your Submission has been received!"
   end
 
   def edit

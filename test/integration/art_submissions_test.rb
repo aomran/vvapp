@@ -33,9 +33,11 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
       click_button 'Déposer soumission'
     end
 
-    assert page.has_content?("Your Submission has been received!"), 'Notice about submission received not shown'
+    bob_submission = users(:bob).submissions.first
+    assert_equal bob_submission, Submission.last
 
-    assert_equal users(:bob).submissions.last, Submission.last
+    assert current_path == submission_path(bob_submission), 'Was not redirected to Bob submission page'
+    assert page.has_content?("Your Submission has been received!"), 'Notice about submission received not shown'
   end
 
   test "artist can not make more than one submission" do
