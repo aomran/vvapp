@@ -27,6 +27,16 @@ class SubmissionsController < ApplicationController
     redirect_to submissions_path, notice: "Your Submission has been received!"
   end
 
+  def edit
+    @submission = Submission.find(params[:id])
+  end
+
+  def update
+    @submission = Submission.find(params[:id])
+    @submission.update(submission_params)
+    redirect_to @submission
+  end
+
   private
   def submission_params
     params.require(:submission).permit(:cv, :artist_statement, :expo_project, :special_needs, :image_list)

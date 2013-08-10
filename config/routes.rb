@@ -1,7 +1,8 @@
 Vvapp::Application.routes.draw do
+  root 'sessions#new'
 
   resources :users, except: [:show, :edit, :update]
-  resources :submissions, except: [:edit]
+  resources :submissions
 
   get "/login", to: "sessions#new", as: "login"
   post "/login", to: "sessions#create"
@@ -9,7 +10,6 @@ Vvapp::Application.routes.draw do
   get "/register", to: "users#new", as: "register"
   get '/profile', to: "users#profile"
   get '/profile/edit', to: "users#edit_profile", as: "edit_profile"
-  get '/submission/edit', to: "users#edit_submission", as: "edit_submission"
   patch '/profile', to: 'users#update_profile', as: 'update_profile'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -28,7 +28,7 @@ class UserSessionsTest < Capybara::Rails::TestCase
   test "logged in artist can log out" do
     visit logout_path
 
-    assert current_path == users_path, 'Did not redirect to users index view'
+    assert current_path == root_path, 'Did not redirect to front page'
     assert page.has_content?("Logged out!"), 'No logout notice given'
   end
 end

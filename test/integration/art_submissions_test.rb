@@ -45,4 +45,23 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     assert current_path == profile_path, 'Not redirected to their profile page'
     assert page.has_content?("You have already made a submission"), 'Error message is not given'
   end
+
+  test "artist can edit their submission" do
+    login_as(users(:paula))
+    paula_submission = users(:paula).submissions.first
+
+    click_link 'Editez Soumission'
+    assert current_path == edit_submission_path(paula_submission), 'Did not go to the submission edit page'
+
+    fill_in "CV", with: 'cv_new.pdf'
+    fill_in "Démarche", with: 'artist_statement_new.pdf'
+    fill_in "Projet", with: 'expo_project_new.pdf'
+    fill_in "Exigences spéciales (optionelle)", with: 'special_needs_new.pdf'
+    fill_in "Liste d'Images", with: 'image_list_new.pdf'
+    click_button 'Enregistrer modifications'
+
+    assert current_path == submission_path(paula_submission), 'Did not go to the show submission page'
+    paula_submission = users(:paula).submissions.first
+    assert paula_submission.cv == 'cv_new.pdf', 'CV was not updated'
+  end
 end

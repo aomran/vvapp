@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   def profile
+    @submission = @current_user.submissions.first
   end
 
   def edit_profile
