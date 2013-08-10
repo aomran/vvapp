@@ -16,6 +16,7 @@ class SubmissionsController < ApplicationController
       redirect_to profile_path, notice: "You have already made a submission"
     else
       @submission = Submission.new
+      @submission.images.new
     end
   end
 
@@ -39,6 +40,6 @@ class SubmissionsController < ApplicationController
 
   private
   def submission_params
-    params.require(:submission).permit(:cv, :artist_statement, :expo_project, :special_needs, :image_list)
+    params.require(:submission).permit(:cv, :artist_statement, :expo_project, :special_needs, :image_list, :images_attributes => [:image_file])
   end
 end
