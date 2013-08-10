@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     if session[:user_id]
       @current_user = User.find(session[:user_id])
     else
-      redirect_to login_path, notice: 'Please signup or login before making an art submission'
+      redirect_to login_path, notice: 'Veuillez vous connecter ou vous inscrire avant de faire une soumission de dossier'
     end
   end
 end
