@@ -69,17 +69,20 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     assert find_link('Editez Soumission').visible?
   end
 
-  test "logged in artist can make a submission with an image" do
-    login_as(users(:bob))
-    visit new_submission_path
+  test "artist can add images to submission" do
+    user_with_submission = users(:paula)
+    user_submission = users(:paula).submissions.first
+
+    login_as(user_with_submission)
+    visit submission_path(user_submission)
 
     fill_in "Fichiers d'Images", with: 'art.jpg'
     assert_difference 'Image.count' do
       click_button 'Déposer soumission'
     end
 
-    bob_submission_image = users(:bob).submissions.first.images.first
-    assert_equal bob_submission_image, Image.last
+    user_submission_image = users(:paula).submissions.first.images.first
+    assert_equal user_submission_image, Image.last
   end
 
 end

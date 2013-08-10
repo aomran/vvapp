@@ -11,3 +11,17 @@
 </ul>
 
 <%= link_to 'Editez Soumission', edit_submission_path(@submission) %>
+
+<%= form_for [@submission, Image.new], html: {class: 'form-horizontal'} do |f| %>
+
+  <div class="control-group">
+    <%= f.label :image_file, "Fichiers d'Images", :class => "control-label" %>
+    <div class="controls"><%= f.text_field :image_file %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls"> <%= f.submit "Déposer soumission" %></div>
+  </div>
+
+<% end %>

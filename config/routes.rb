@@ -1,8 +1,11 @@
 Vvapp::Application.routes.draw do
+  get "images/create"
   root 'sessions#new'
 
   resources :users, except: [:show, :edit, :update]
-  resources :submissions
+  resources :submissions do
+    resources :images
+  end
 
   get "/login", to: "sessions#new", as: "login"
   post "/login", to: "sessions#create"
