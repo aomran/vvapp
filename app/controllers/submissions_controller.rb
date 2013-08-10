@@ -13,7 +13,7 @@ class SubmissionsController < ApplicationController
   def new
     @user = User.find(session[:user_id])
     if @user.submissions.size == 1
-      redirect_to profile_path, notice: "You have already made a submission"
+      redirect_to profile_path, notice: "Vous avez déjà une soumission"
     else
       @submission = Submission.new
     end
@@ -24,7 +24,7 @@ class SubmissionsController < ApplicationController
     @submission = @user.submissions.build(submission_params)
 
     @submission.save
-    redirect_to submission_path(@submission), notice: "Your Submission has been received!"
+    redirect_to submission_path(@submission), notice: "Votre soumission a été reçu!"
   end
 
   def edit
