@@ -65,5 +65,8 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     assert current_path == submission_path(paula_submission), 'Did not go to the show submission page'
     paula_submission = users(:paula).submissions.first
     assert paula_submission.cv == 'cv_new.pdf', 'CV was not updated'
+
+    assert find_link('Editez Soumission').visible?
   end
+
 end
