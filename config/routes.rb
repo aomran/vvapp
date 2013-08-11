@@ -1,5 +1,4 @@
 Vvapp::Application.routes.draw do
-  get "images/create"
   root 'sessions#new'
 
   resources :users, except: [:show, :edit, :update]

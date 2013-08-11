@@ -9,6 +9,16 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     click_button 'Connexion'
   end
 
+  def attach_image_as(image, user)
+    user_with_submission = user
+    user_submission = user.submissions.first
+
+    login_as(user_with_submission)
+    visit submission_path(user_submission)
+
+    attach_file "Fichiers d'Images", "#{Rails.root}/test/fixtures/#{image}"
+  end
+
 
   test "not logged in artist cannot make submissions" do
 
@@ -70,13 +80,9 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
   end
 
   test "artist can add images to submission" do
-    user_with_submission = users(:paula)
-    user_submission = users(:paula).submissions.first
+    image = "SyntacticSugar.jpg"
+    attach_image_as(image, users(:paula))
 
-    login_as(user_with_submission)
-    visit submission_path(user_submission)
-
-    fill_in "Fichiers d'Images", with: 'art.jpg'
     assert_difference 'Image.count' do
       click_button 'Déposer soumission'
     end
@@ -84,5 +90,16 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     user_submission_image = users(:paula).submissions.first.images.first
     assert_equal user_submission_image, Image.last
   end
+
+  test "artist can see submission images on show page" do
+    image = "SyntacticSugar.jpg"
+    attach_image_as(image, users(:paula))
+    user_submission = users(:paula).submissions.first
+    click_button 'Déposer soumission'
+
+    assert current_path == submission_path(user_submission)
+    assert page.has_xpath?("//img[contains(@src, \"#{image}\")]"), 'image not found on show page'
+  end
+
 
 end
