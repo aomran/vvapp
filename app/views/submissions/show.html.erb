@@ -1,16 +1,37 @@
-<h1>Submission for <%= @submission.user.first_name + " " + @submission.user.last_name%></h1>
+<h1>Soumission de <%= @submission.user.first_name + " " + @submission.user.last_name%></h1>
 
 <h2>Documents</h2>
 
-<ul>
-  <li><%= @submission.cv %></li>
-  <li><%= @submission.artist_statement %></li>
-  <li><%= @submission.expo_project %></li>
-  <li><%= @submission.special_needs %></li>
-  <li><%= @submission.image_list %></li>
-</ul>
+  <div class="table-profile">
+  <table class="table table-striped">
+  <tr>
+    <td>CV: </td>
+    <td> <%= @submission.cv %></td>
+  </tr>
 
-<%= link_to 'Editez Soumission', edit_submission_path(@submission) %>
+  <tr>
+    <td>Démarche: </td>
+    <td> <%= @submission.artist_statement %></td>
+  </tr>
+
+  <tr>
+    <td>Projet: </td>
+    <td> <%= @submission.expo_project %></td>
+  </tr>
+
+  <tr>
+    <td>Exigences Spéciales: </td>
+    <td> <%= @submission.special_needs %></td>
+  </tr>
+
+  <tr>
+    <td>Liste d'Images: </td>
+    <td> <%= @submission.image_list %></td>
+  </tr>
+</table>
+</div>
+
+<%= link_to raw('<i class="icon-edit"></i> Editez Soumission'), edit_submission_path(@submission), class: "btn btn-small"%>
 
 <%= form_for [@submission, Image.new], html: {class: 'form-horizontal'} do |f| %>
 
@@ -20,9 +41,9 @@
     </div>
   </div>
 
-<!--   <div class="control-group">
+  <div class="control-group">
     <div class="controls"> <%= f.submit "Déposer soumission" %></div>
-  </div> -->
+  </div>
 
 <% end %>
 

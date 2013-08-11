@@ -25,7 +25,7 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     visit new_submission_path
 
     assert current_path == login_path, 'Not at login page'
-    assert page.has_content?('Please signup or login before making an art submission'), 'Notice about logging in or signing up not found'
+    assert page.has_content?('Veuillez vous connecter ou vous inscrire avant de faire une soumission de dossier'), 'Notice about logging in or signing up not found'
   end
 
   test "logged in artist can make a submission" do
@@ -47,7 +47,7 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     assert_equal bob_submission, Submission.last
 
     assert current_path == submission_path(bob_submission), 'Was not redirected to Bob submission page'
-    assert page.has_content?("Your Submission has been received!"), 'Notice about submission received not shown'
+    assert page.has_content?("Votre soumission a été reçu!"), 'Notice about submission received not shown'
   end
 
   test "artist can not make more than one submission" do
@@ -55,7 +55,7 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
 
     visit new_submission_path
     assert current_path == profile_path, 'Not redirected to their profile page'
-    assert page.has_content?("You have already made a submission"), 'Error message is not given'
+    assert page.has_content?("Vous avez déjà une soumission"), 'Error message is not given'
   end
 
   test "artist can edit their submission" do

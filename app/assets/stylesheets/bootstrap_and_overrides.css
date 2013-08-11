@@ -8,6 +8,12 @@
 .container {
   /*width: 940px;*/
 }
+h1 {
+  font-size: 34px;
+}
+h2 {
+  font-size: 28px;
+}
 .projets h1{
   font-family: 'Droid Serif';
   font-size: 50px;

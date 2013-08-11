@@ -13,7 +13,7 @@
       Voix Visuelle
     </span>
   </h1>
-  <div id="site-description">Le Centre d'artistes Voix Visuelle</div>
+  <div id="site-description"><a href="http://voixvisuelle.ca/">Le Centre d'artistes Voix Visuelle</a></div>
 </div>
 <div class="container">
   <div class="projets">
@@ -22,9 +22,16 @@
   <div class="navbar navbar-inverse">
     <div class="navbar-inner">
       <ul class="nav">
-        <li class="<%= 'active' if current_page?(register_path) %>"><a href="/register">Inscrivez-vous</a></li>
-        <li class="<%= 'active' if current_page?(login_path) %>"><a href="/login">Connectez-vous</a></li>
-        <li class="VVmain"><a href="http://voixvisuelle.ca/">Retournez au site principale</a></li>
+      <% if session[:user_id] %>
+        <!-- this section causes issues -->
+           <!-- insert problemBit here -->
+        <!-- end of section -->
+        <li><a href="/logout">Se déconnecter</a></li>
+      <% else %>
+          <li class="<%= 'active' if current_page?(register_path) %>"><a href="/register">Inscrivez-vous</a></li>
+          <li class="<%= 'active' if current_page?(login_path) %>"><a href="/login">Connectez-vous</a></li>
+      <% end %>
+
       </ul>
     </div>
   </div>
