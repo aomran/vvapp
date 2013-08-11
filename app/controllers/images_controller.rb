@@ -2,12 +2,15 @@ class ImagesController < ApplicationController
   before_action :check_user_login
 
   def create
-    submission = Submission.find(params[:submission_id])
-    image = Image.new(image_params)
-    image.submission = submission
-    image.save
+    @submission = Submission.find(params[:submission_id])
+    @image = Image.new(image_params)
+    @image.submission = @submission
+    @image.save
 
-    redirect_to submission
+    respond_to do |format|
+      format.html { redirect_to @submission }
+      format.js { }
+    end
   end
 
   private

@@ -43,6 +43,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'carrierwave'
 gem 'rmagick'
+gem 'jquery-fileupload-rails'
+gem 'jquery-turbolinks'
 # Use unicorn as the app server
 # gem 'unicorn'
 
