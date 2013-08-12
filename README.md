@@ -15,19 +15,23 @@ The admin team at Voix Visuelle will have most of the work already done for them
 * More menu bar functionality: to be thought about.
 
 ## More navigation
-* ~~Breadcrumbs -- Étape 1 (profile), 2 (text documents submission), 3 (images)~~ Implemented for steps 1 and 2. Next: put Étape 3 de 3 (menu bar 2/3 full) when user starts submitting images; Étape 3 de 3 (menu bar 3/3 full) when images are all in.
-* Notification of completion
-* Way for user to finalize submission/step 3; a way for user and app to do a sort of handshake, agreeing on one side that the submission is valid; on the other side that the user considers themselves done. Link could set a field in submission object of "complete." (They can still return to edit submission if they want)
+* ~~Breadcrumbs -- Étape 1 (profile), 2 (text documents submission), 3 (images)~~ Implemented for steps 1 and 2.
+* ~~Put Étape 3 de 3 (menu bar 2/3 full) when user starts submitting images.~~
+* Étape 3 de 3 (menu bar 3/3 full) when images are all in.
+* ~~Notification of completion~~
+* ~~Way for user to finalize submission/step 3; a way for user and app to do a sort of handshake, agreeing on one side that the submission is valid; on the other side that the user considers themselves done. Link could set a field in submission object of "complete." (They can still return to edit submission if they want)~~
 
 ##Profile
 * Change Femme/Homme to a radio button
 
-##Image loader
+## Document Submission
 * Make file uploads in submissions
+
+##Image loader
 * The image-saving button currently named "Déposer soumission" on the submission show page should be renamed "Ajouter Images" and it should only appear if JS is disabled
 * Image loader needs explanations, french text
 * The ability to remove images needs to be added
-* Adding images should not be on the display submission page but rather on a new (or add) images page
+* ~~Adding images should not be on the display submission page but rather on a new (or add) images page~~
 * A list of filenames of images should be displayed as well as the thumbnails
 
 ##Validations
