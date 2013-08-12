@@ -1,3 +1,8 @@
+<div class="progress">
+  <div class="bar" style="width: 33%;"></div>
+</div>
+<div class="progress-label">Étape 1 de 3</div>
+
 <h1>Editer profile pour <%= @current_user.first_name + " " + @current_user.last_name%></h1>
 
 <%= render partial: 'form', locals: { submit_text: 'Enregistrer modifications', url: update_profile_path } %>
