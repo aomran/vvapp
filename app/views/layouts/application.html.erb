@@ -23,13 +23,11 @@
     <div class="navbar-inner">
       <ul class="nav">
       <% if @current_user %>
-
         <li><a href="/logout">Se déconnecter</a></li>
       <% else %>
           <li class="<%= 'active' if current_page?(register_path) %>"><a href="/register">Inscrivez-vous</a></li>
           <li class="<%= 'active' if current_page?(login_path) %>"><a href="/login">Connectez-vous</a></li>
       <% end %>
-
       </ul>
     </div>
   </div>
@@ -41,6 +39,7 @@
   <% if alert %>
     <p class="alert"><%= alert %></p>
   <% end %>
+
   <%= yield %>
 </div>
 

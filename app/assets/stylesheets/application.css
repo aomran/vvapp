@@ -39,3 +39,9 @@ margin-left: 250px
 .table-profile {
 width:600px;
 }
+
+.progress-label{
+ width: 100px;
+ display: inline;
+ float: right;
+}
