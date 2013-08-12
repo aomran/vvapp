@@ -1,3 +1,7 @@
+<div class="progress">
+  <div class="bar" style="width: 66%;"></div>
+</div>
+<div class="progress-label">Étape 3 de 3</div>
 <%= form_for [@submission, Image.new], html: {class: 'form-horizontal'} do |f| %>
 
   <div class="control-group">
@@ -11,8 +15,9 @@
   </div>
 
 <% end %>
-
+<%= link_to 'Finalisez Soumission', submission_images_path(@submission), class: "btn btn-primary btn-large  btn-right"%>
 
 <div class="images">
   <%= render @submission.images %>
 </div>
+
