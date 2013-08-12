@@ -25,7 +25,7 @@ The admin team at Voix Visuelle will have most of the work already done for them
 * Change Femme/Homme to a radio button
 
 ## Document Submission
-* Make file uploads in submissions
+* ~~Make file uploads in submissions~~
 
 ##Image loader
 * The image-saving button currently named "Déposer soumission" on the submission show page should be renamed "Ajouter Images" and it should only appear if JS is disabled

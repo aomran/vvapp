@@ -2,27 +2,27 @@
 
   <div class="control-group">
     <%= f.label :cv, "CV", :class => "control-label" %>
-    <div class="controls"><%= f.text_field :cv %> Curriculum vitae (trois pages maximum)</div>
+    <div class="controls"><%= f.file_field :cv %> Curriculum vitae (trois pages maximum)</div>
   </div>
 
   <div class="control-group">
     <%= f.label :artist_statement, "Démarche", :class => "control-label" %>
-    <div class="controls"><%= f.text_field :artist_statement %> Démarche d'Artiste (un page)</div>
+    <div class="controls"><%= f.file_field :artist_statement %> Démarche d'Artiste (un page)</div>
   </div>
 
   <div class="control-group">
     <%= f.label :expo_project, "Projet", :class => "control-label" %>
-    <div class="controls"><%= f.text_field :expo_project %> Projet d'Exposition</div>
+    <div class="controls"><%= f.file_field :expo_project %> Projet d'Exposition</div>
   </div>
 
   <div class="control-group">
     <%= f.label :special_needs, "Exigences spéciales (optionelle)", :class => "control-label" %>
-    <div class="controls"><%= f.text_field :special_needs %> Toute exigence spéciale pour l'installation</div>
+    <div class="controls"><%= f.file_field :special_needs %> Toute exigence spéciale pour l'installation</div>
   </div>
 
   <div class="control-group">
     <%= f.label :image_list, "Liste d'Images", :class => "control-label" %>
-    <div class="controls"><%= f.text_field :image_list %></div>
+    <div class="controls"><%= f.file_field :image_list %></div>
   </div>
 
   <div class="control-group">

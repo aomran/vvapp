@@ -19,7 +19,7 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     click_link 'Ajoutez Images'
     assert current_path == submission_images_path(user_submission)
 
-    attach_file "Fichiers d'Images", "#{Rails.root}/test/fixtures/#{image}"
+    attach_file "Fichiers d'Images", "#{Rails.root}/test/fixtures/images/#{image}"
   end
 
 
@@ -35,18 +35,24 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     login_as(users(:bob))
 
     visit new_submission_path
-    fill_in "CV", with: 'cv.pdf'
-    fill_in "Démarche", with: 'artist_statement.pdf'
-    fill_in "Projet", with: 'expo_project.pdf'
-    fill_in "Exigences spéciales (optionelle)", with: 'special_needs.pdf'
-    fill_in "Liste d'Images", with: 'image_list.pdf'
-
+    attach_file "CV", "#{Rails.root}/test/fixtures/documents/cv.pdf"
+    attach_file "Démarche", "#{Rails.root}/test/fixtures/documents/statement.pdf"
+    attach_file "Projet", "#{Rails.root}/test/fixtures/documents/expo.pdf"
+    attach_file "Exigences spéciales (optionelle)", "#{Rails.root}/test/fixtures/documents/special.pdf"
+    attach_file "Liste d'Images", "#{Rails.root}/test/fixtures/documents/image_list.pdf"
 
     assert_difference 'Submission.count' do
       click_button 'Déposer soumission'
     end
 
     bob_submission = users(:bob).submissions.first
+
+    assert bob_submission.cv_url
+    assert bob_submission.artist_statement_url
+    assert bob_submission.expo_project_url
+    assert bob_submission.special_needs_url
+    assert bob_submission.image_list_url
+
     assert_equal bob_submission, Submission.last
 
     assert current_path == submission_path(bob_submission), 'Was not redirected to Bob submission page'
@@ -71,16 +77,18 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     click_link 'Editez Soumission'
     assert current_path == edit_submission_path(paula_submission), 'Did not go to the submission edit page'
 
-    fill_in "CV", with: 'cv_new.pdf'
-    fill_in "Démarche", with: 'artist_statement_new.pdf'
-    fill_in "Projet", with: 'expo_project_new.pdf'
-    fill_in "Exigences spéciales (optionelle)", with: 'special_needs_new.pdf'
-    fill_in "Liste d'Images", with: 'image_list_new.pdf'
+    old_file_path = paula_submission.cv_url
+    attach_file "CV", "#{Rails.root}/test/fixtures/documents/cv_new.pdf"
+    attach_file "Démarche", "#{Rails.root}/test/fixtures/documents/statement_new.pdf"
+    attach_file "Projet", "#{Rails.root}/test/fixtures/documents/expo_new.pdf"
+    attach_file "Exigences spéciales (optionelle)", "#{Rails.root}/test/fixtures/documents/special_new.pdf"
+    attach_file "Liste d'Images", "#{Rails.root}/test/fixtures/documents/image_list_new.pdf"
     click_button 'Enregistrer modifications'
 
     assert current_path == submission_path(paula_submission), 'Did not go to the show submission page'
     paula_submission = users(:paula).submissions.first
-    assert paula_submission.cv == 'cv_new.pdf', 'CV was not updated'
+
+    assert paula_submission.cv_url != old_file_path, 'CV was not updated'
 
     assert find_link('Editez Soumission').visible?
   end
