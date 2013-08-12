@@ -8,7 +8,7 @@ The admin team at Voix Visuelle will have most of the work already done for them
 
 # To-do:
 ## Menu bar functionality
-* ~~Make the calling of the pre-method check_user_login more universal~~
+* ~~Make the calling of the pre-method check_user_login more universal~~ Done.
 * ~~Finish implementing the menu bar functionality Paula was working on:
 	* On profile page, if currently logged-on user has a submission in progress, the menu bar should give access to **Editez Soumission**; otherwise, the menu bar should give access to **Créez Soumission**.~~ Decided to not implement in order to keep UI streamlined.
 * ~~More menu bar functionality: for example root menu bar should allow possibility to access profile, to access submission, if the user is logged on, instead of leaving them with nowhere to go but to log off.~~ Instead, redefined root path to point to profile.
