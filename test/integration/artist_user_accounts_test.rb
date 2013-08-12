@@ -22,7 +22,7 @@ class ArtistUserAccountsTest < Capybara::Rails::TestCase
     fill_in 'Province', with: 'Quebec'
     fill_in 'Code Postal', with: 'J8G5H6'
     fill_in 'Pays', with: 'Quebec'
-    fill_in 'Femme/Homme radio', with: 'Female'
+    choose 'Femme'
 
     assert_difference 'User.count' do
       click_button 'Inscrivez-vous'
@@ -49,7 +49,7 @@ class ArtistUserAccountsTest < Capybara::Rails::TestCase
     fill_in 'Province', with: 'Huebec'
     fill_in 'Code Postal', with: 'A8G5H6'
     fill_in 'Pays', with: 'Huebec'
-    fill_in 'Femme/Homme radio', with: 'Femme'
+    choose 'Femme'
     click_button 'Enregistrer modifications'
 
     assert current_path == profile_path
