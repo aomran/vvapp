@@ -53,7 +53,7 @@
 
 
   <% if @current_user.has_submission? %>
-    <%= link_to 'Editez Soumission', edit_submission_path(@submission), class: 'btn btn-large btn-primary' %>
+    <%= link_to 'Continuez Soumission', submission_path(@submission), class: 'btn btn-large btn-primary' %>
   <% else %>
     <%= link_to 'Créez Soumission', new_submission_path, class: 'btn btn-large btn-primary' %>
   <% end %>

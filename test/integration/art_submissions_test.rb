@@ -9,12 +9,15 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     click_button 'Connexion'
   end
 
-  def attach_image_as(image, user)
-    user_with_submission = user
-    user_submission = user.submissions.first
-
+  def attach_image_as(image, user_with_submission)
+    user_submission = user_with_submission.submissions.first
     login_as(user_with_submission)
-    visit submission_path(user_submission)
+
+    click_link 'Continuez Soumission'
+    assert_equal submission_path(user_submission), current_path
+
+    click_link 'Ajoutez Images'
+    assert current_path == submission_images_path(user_submission)
 
     attach_file "Fichiers d'Images", "#{Rails.root}/test/fixtures/#{image}"
   end
@@ -62,6 +65,9 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     login_as(users(:paula))
     paula_submission = users(:paula).submissions.first
 
+    click_link 'Continuez Soumission'
+    assert current_path == submission_path(paula_submission), 'Did not go to the submission show page'
+
     click_link 'Editez Soumission'
     assert current_path == edit_submission_path(paula_submission), 'Did not go to the submission edit page'
 
@@ -97,7 +103,7 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     user_submission = users(:paula).submissions.first
     click_button 'Déposer soumission'
 
-    assert current_path == submission_path(user_submission)
+    assert_equal submission_images_path(user_submission), current_path
     assert page.has_xpath?("//img[contains(@src, \"#{image}\")]"), 'image not found on show page'
   end
 

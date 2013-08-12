@@ -8,7 +8,7 @@ class ImagesController < ApplicationController
     @image.save
 
     respond_to do |format|
-      format.html { redirect_to @submission }
+      format.html { redirect_to submission_images_path(@submission) }
       format.js { }
     end
   end

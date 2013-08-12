@@ -38,6 +38,10 @@ class SubmissionsController < ApplicationController
     redirect_to @submission
   end
 
+  def images
+    @submission = Submission.find(params[:id])
+  end
+
   private
   def submission_params
     params.require(:submission).permit(:cv, :artist_statement, :expo_project, :special_needs, :image_list, :images_attributes => [:image_file])

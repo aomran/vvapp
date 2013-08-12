@@ -3,7 +3,8 @@ Vvapp::Application.routes.draw do
 
   resources :users, except: [:show, :edit, :update]
   resources :submissions do
-    resources :images
+    get 'images', on: :member
+    resources :images, only: [:create]
   end
 
   get "/login", to: "sessions#new", as: "login"

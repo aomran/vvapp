@@ -38,21 +38,4 @@
 
 <%= link_to raw('<i class="icon-edit"></i> Editez Soumission'), edit_submission_path(@submission), class: "btn btn-small"%>
 
-<%= form_for [@submission, Image.new], html: {class: 'form-horizontal'} do |f| %>
-
-  <div class="control-group">
-    <%= f.label :image_file, "Fichiers d'Images", :class => "control-label" %>
-    <div class="controls"><%= f.file_field :image_file, multiple: true, name: "image[image_file]" %>
-    </div>
-  </div>
-
-  <div class="control-group">
-    <div class="controls"> <%= f.submit "Déposer soumission" %></div>
-  </div>
-
-<% end %>
-
-
-<div class="images">
-  <%= render @submission.images %>
-</div>
+<%= link_to 'Ajoutez Images', submission_images_path(@submission), class: "btn btn-large"%>
