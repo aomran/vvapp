@@ -22,7 +22,7 @@ The admin team at Voix Visuelle will have most of the work already done for them
 * ~~Way for user to finalize submission/step 3; a way for user and app to do a sort of handshake, agreeing on one side that the submission is valid; on the other side that the user considers themselves done. Link could set a field in submission object of "complete." (They can still return to edit submission if they want)~~
 
 ##Profile
-* Change Femme/Homme to a radio button
+* ~~Change Femme/Homme to a radio button~~ Done
 
 ## Document Submission
 * ~~Make file uploads in submissions~~
