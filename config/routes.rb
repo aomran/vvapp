@@ -1,5 +1,5 @@
 Vvapp::Application.routes.draw do
-  root 'sessions#new'
+  root 'users#profile'
 
   resources :users, except: [:show, :edit, :update]
   resources :submissions do

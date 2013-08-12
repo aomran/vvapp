@@ -22,10 +22,8 @@
   <div class="navbar navbar-inverse">
     <div class="navbar-inner">
       <ul class="nav">
-      <% if session[:user_id] %>
-        <!-- this section causes issues -->
-           <!-- insert problemBit here -->
-        <!-- end of section -->
+      <% if @current_user %>
+
         <li><a href="/logout">Se déconnecter</a></li>
       <% else %>
           <li class="<%= 'active' if current_page?(register_path) %>"><a href="/register">Inscrivez-vous</a></li>

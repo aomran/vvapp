@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class SubmissionsControllerTest < ActionController::TestCase
-  test "should create submission for artist" do
+  def setup
     session[:user_id] = users(:bob).id
+  end
+
+  test "should create submission for artist" do
     post :create, submission: {
       cv: 'cv.pdf', artist_statement: 'statement.pdf', expo_project: 'expo.pdf', special_needs: 'special.pdf', image_list: 'image_list.pdf'
     }
