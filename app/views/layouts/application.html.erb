@@ -22,8 +22,7 @@
   <div class="navbar navbar-inverse">
     <div class="navbar-inner">
       <ul class="nav">
-      <% if session[:user_id] %>
-
+      <% if @current_user %>
 
         <li><a href="/logout">Se déconnecter</a></li>
       <% else %>
