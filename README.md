@@ -15,7 +15,7 @@ The admin team at Voix Visuelle will have most of the work already done for them
 * More menu bar functionality: to be thought about.
 
 ## More navigation
-* Breadcrumbs -- Étape 1 (profile), 2 (text documents submission), 3 (images)
+* ~~Breadcrumbs -- Étape 1 (profile), 2 (text documents submission), 3 (images)~~ Implemented for steps 1 and 2. Next: put Étape 3 de 3 (menu bar 2/3 full) when user starts submitting images; Étape 3 de 3 (menu bar 3/3 full) when images are all in.
 * Notification of completion
 * Way for user to finalize submission/step 3; a way for user and app to do a sort of handshake, agreeing on one side that the submission is valid; on the other side that the user considers themselves done. Link could set a field in submission object of "complete." (They can still return to edit submission if they want)
 
