@@ -8,16 +8,19 @@ The admin team at Voix Visuelle will have most of the work already done for them
 
 # To-do:
 ## Menu bar functionality
-* Make the calling of the pre-method check_user_login more universal
-* Finish implementing the menu bar functionality Paula was working on:
-	* On profile page, if currently logged-on user has a submission in progress, the menu bar should give access to **Editez Soumission**; otherwise, the menu bar should give access to **Créez Soumission**. 
-* More menu bar functionality: for example root menu bar should allow possibility to access profile, to access submission, if the user is logged on, instead of leaving them with nowhere to go but to log off.
+* ~~Make the calling of the pre-method check_user_login more universal~~ Done.
+* ~~Finish implementing the menu bar functionality Paula was working on:~~
+	* ~~On profile page, if currently logged-on user has a submission in progress, the menu bar should give access to **Editez Soumission**; otherwise, the menu bar should give access to **Créez Soumission**.~~ Decided to not implement in order to keep UI streamlined.
+* ~~More menu bar functionality: for example root menu bar should allow possibility to access profile, to access submission, if the user is logged on, instead of leaving them with nowhere to go but to log off.~~ Instead, redefined root path to point to profile.
 * More menu bar functionality: to be thought about.
 
 ## More navigation
 * Breadcrumbs -- Étape 1 (profile), 2 (text documents submission), 3 (images)
 * Notification of completion
 * Way for user to finalize submission/step 3; a way for user and app to do a sort of handshake, agreeing on one side that the submission is valid; on the other side that the user considers themselves done. Link could set a field in submission object of "complete." (They can still return to edit submission if they want)
+
+##Profile
+* Change Femme/Homme to a radio button
 
 ##Image loader
 * Make file uploads in submissions

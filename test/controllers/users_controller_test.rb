@@ -8,6 +8,9 @@ class UsersControllerTest < ActionController::TestCase
   #   assert assigns(:user)
   #   assert :success
   # end
+  def setup
+    session[:user_id] = users(:paula).id
+  end
 
   test "should get list of all users" do
     get :index
@@ -16,8 +19,6 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should show profile for current user" do
-    session[:user_id] = users(:paula).id
-
     get :profile
 
     assert assigns(:current_user), 'current user object not assigned to view'

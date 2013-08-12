@@ -1,6 +1,6 @@
 class SubmissionsController < ApplicationController
 
-  before_action :check_user_login, only: [:new, :create]
+  before_action :check_user_login
 
   def index
     @submissions = Submission.all

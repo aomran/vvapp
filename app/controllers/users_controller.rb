@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :check_user_login, only: [:profile, :edit_profile, :update_profile]
+  before_action :check_user_login, except: [:new, :create]
 
   def index
     @users = User.all
