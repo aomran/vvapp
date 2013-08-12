@@ -4,6 +4,7 @@ Vvapp::Application.routes.draw do
   resources :users, except: [:show, :edit, :update]
   resources :submissions do
     get 'images', on: :member
+    post 'complete', on: :member
     resources :images, only: [:create]
   end
 

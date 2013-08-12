@@ -7,7 +7,7 @@ class ImagesControllerTest < ActionController::TestCase
     post :create, image: {image_file: 'art.jpg'}, submission_id: submission.id
 
     assert_equal submission.images.size, 1
-    assert_redirected_to submission_path(submission)
+    assert_redirected_to submission_images_path(submission)
   end
 
 end

@@ -7,6 +7,7 @@ one:
   special_needs: MyString
   image_list: MyString
   user: paula
+  complete:
 
 two:
   cv: MyString
@@ -15,3 +16,4 @@ two:
   special_needs: MyString
   image_list: MyString
   user: ahmed
+  complete:

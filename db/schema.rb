@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130810174143) do
+ActiveRecord::Schema.define(version: 20130812182112) do
 
   create_table "images", force: true do |t|
     t.string   "image_file"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20130810174143) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.boolean  "complete"
   end
 
   add_index "submissions", ["user_id"], name: "index_submissions_on_user_id"

@@ -42,6 +42,13 @@ class SubmissionsController < ApplicationController
     @submission = Submission.find(params[:id])
   end
 
+  def complete
+    @submission = Submission.find(params[:id])
+    @submission.complete = true
+    @submission.save
+    redirect_to profile_path, notice: 'Votre Soumission est complete'
+  end
+
   private
   def submission_params
     params.require(:submission).permit(:cv, :artist_statement, :expo_project, :special_needs, :image_list, :images_attributes => [:image_file])

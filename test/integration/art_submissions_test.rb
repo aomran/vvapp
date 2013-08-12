@@ -107,5 +107,18 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     assert page.has_xpath?("//img[contains(@src, \"#{image}\")]"), 'image not found on show page'
   end
 
+  test "artist can finalize submission" do
+    login_as(users(:paula))
+    click_link 'Continuez Soumission'
+    click_link 'Ajoutez Images'
+    click_button 'Finalisez Soumission'
+
+    user_submission_id = users(:paula).submissions.first.id
+    user_submission = Submission.find(user_submission_id)
+    assert_equal true, user_submission.complete, 'The submission is not complete'
+    assert_equal profile_path, current_path
+    assert page.has_content?('Votre Soumission est complete')
+  end
+
 
 end

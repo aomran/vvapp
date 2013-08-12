@@ -24,4 +24,13 @@ class SubmissionsControllerTest < ActionController::TestCase
     assert :success
     assert assigns(:submission)
   end
+
+  test "should set submission as complete" do
+    post :complete, id: submissions(:one).id
+
+    submission = Submission.find(submissions(:one).id)
+    assert_equal true, submission.complete
+    assert_redirected_to profile_path
+
+  end
 end

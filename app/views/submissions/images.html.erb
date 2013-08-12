@@ -15,7 +15,7 @@
   </div>
 
 <% end %>
-<%= link_to 'Finalisez Soumission', submission_images_path(@submission), class: "btn btn-primary btn-large  btn-right"%>
+<%= button_to 'Finalisez Soumission', complete_submission_path(@submission), class: "btn btn-primary btn-large  btn-right"%>
 
 <div class="images">
   <%= render @submission.images %>
