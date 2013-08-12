@@ -13,7 +13,7 @@ class SubmissionsController < ApplicationController
   def new
     @user = User.find(session[:user_id])
     if @user.submissions.size == 1
-      redirect_to profile_path, notice: "Vous avez déjà une soumission"
+      redirect_to profile_path, alert: "Vous avez déjà une soumission"
     else
       @submission = Submission.new
       @submission.images.new

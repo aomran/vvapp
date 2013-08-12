@@ -55,8 +55,11 @@
       </div>
 
       <div class="control-group">
-        <%= f.label :gender, "Femme/Homme radio", :class => "control-label" %>
-        <div class="controls"> <%= f.text_field :gender %> </div>
+        <div class="controls"><%= f.label :gender, "Femme", :class => "radio inline" %>
+        <%= f.radio_button :gender, "Femme" %>
+        <%= f.label :gender, "Homme", :class => "radio inline" %>
+        <%= f.radio_button :gender, "Homme" %></div>
+
       </div>
 
 
