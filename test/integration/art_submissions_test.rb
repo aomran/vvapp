@@ -2,13 +2,6 @@ require 'test_helper'
 
 class ArtSubmissionsTest < Capybara::Rails::TestCase
 
-  def login_as(user)
-    visit login_path
-    fill_in 'Courriel', with: user.email
-    fill_in 'Mot de passe', with: 'password123'
-    click_button 'Connexion'
-  end
-
   test "not logged in artist cannot make submissions" do
 
     visit new_submission_path
@@ -28,7 +21,7 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     attach_file "Liste d'Images", "#{Rails.root}/test/fixtures/documents/image_list.pdf"
 
     assert_difference 'Submission.count' do
-      click_button 'Déposer soumission'
+      click_button 'Submit_submission'
     end
 
     bob_submission = users(:bob).submissions.first
@@ -57,10 +50,10 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     login_as(users(:paula))
     paula_submission = users(:paula).submissions.first
 
-    click_link 'Continuez Soumission'
+    click_link 'link-Continue_Sub'
     assert current_path == submission_path(paula_submission), 'Did not go to the submission show page'
 
-    click_link 'Editez Soumission'
+    click_link 'link-Edit_Sub'
     assert current_path == edit_submission_path(paula_submission), 'Did not go to the submission edit page'
 
     old_file_path = paula_submission.cv_url
@@ -69,14 +62,14 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     attach_file "Projet", "#{Rails.root}/test/fixtures/documents/expo_new.pdf"
     attach_file "Exigences spéciales (optionelle)", "#{Rails.root}/test/fixtures/documents/special_new.pdf"
     attach_file "Liste d'Images", "#{Rails.root}/test/fixtures/documents/image_list_new.pdf"
-    click_button 'Enregistrer modifications'
+    click_button 'Submit_submission'
 
     assert current_path == submission_path(paula_submission), 'Did not go to the show submission page'
     paula_submission = users(:paula).submissions.first
 
     assert paula_submission.cv_url != old_file_path, 'CV was not updated'
 
-    assert find_link('Editez Soumission').visible?
+    assert find_link('link-Edit_Sub').visible?
   end
 
 end

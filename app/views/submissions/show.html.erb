@@ -36,6 +36,6 @@
 </table>
 </div>
 
-<%= link_to raw('<i class="icon-edit"></i> Editez Soumission'), edit_submission_path(@submission), class: "btn btn-small"%>
+<%= link_to raw('<i class="icon-edit"></i> Editez Soumission'), edit_submission_path(@submission), class: "btn btn-small", id: "link-Edit_Sub"%>
 
-<%= link_to 'Ajoutez Images', submission_images_path(@submission), class: "btn btn-primary btn-large"%>
+<%= link_to 'Ajoutez Images', submission_images_path(@submission), class: "btn btn-primary btn-large", id: "link-Add_Images"%>
