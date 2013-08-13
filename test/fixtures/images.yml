@@ -2,8 +2,8 @@
 
 one:
   image_file: MyString
-  submission_id: 
+  submission: one
 
 two:
   image_file: MyString
-  submission_id: 
+  submission_id:

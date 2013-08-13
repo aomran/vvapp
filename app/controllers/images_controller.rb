@@ -13,6 +13,13 @@ class ImagesController < ApplicationController
     end
   end
 
+  def destroy
+    @submission = Submission.find(params[:submission_id])
+    @image = Image.find(params[:id])
+    @image.destroy
+    redirect_to submission_images_path(@submission)
+  end
+
   private
   def image_params
     params.require(:image).permit(:image_file)

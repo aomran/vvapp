@@ -5,7 +5,7 @@ Vvapp::Application.routes.draw do
   resources :submissions do
     get 'images', on: :member
     post 'complete', on: :member
-    resources :images, only: [:create]
+    resources :images, only: [:create, :destroy]
   end
 
   get "/login", to: "sessions#new", as: "login"

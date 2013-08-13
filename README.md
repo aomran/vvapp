@@ -30,9 +30,9 @@ The admin team at Voix Visuelle will have most of the work already done for them
 ##Image loader
 * The image-saving button currently named "Déposer soumission" on the submission show page should be renamed "Ajouter Images" and it should only appear if JS is disabled
 * Image loader needs explanations, french text
-* The ability to remove images needs to be added
+* ~~The ability to remove images needs to be added~~
 * ~~Adding images should not be on the display submission page but rather on a new (or add) images page~~
-* A list of filenames of images should be displayed as well as the thumbnails
+* ~~A list of filenames of images should be displayed as well as the thumbnails~~
 
 ##Validations
 * For images: type, number, size (pixel dimensions min/max; filesize max), possibly filename format, uniqueness of filename.
