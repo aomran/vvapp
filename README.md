@@ -40,6 +40,7 @@ The admin team at Voix Visuelle will have most of the work already done for them
 
 ##Admin
 * Notably, the restriction of access to appropriate pages
+* Ability, at the minimum, to be able to delete accounts; other "housekeeping" capabilities.
 
 
 ##Processing of data collected

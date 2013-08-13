@@ -1,5 +1,5 @@
 <div id="image_<%= image.id %>">
   <%= image_tag image.image_file_url(:thumb) %>
   <%= image.filename %>
-  <%= link_to 'Enlever', [@submission, image], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-small btn-danger" %>
+  <%= link_to 'Enlever', [@submission, image], method: :delete, data: { confirm: 'Êtes-vous sûr?' }, class: "btn btn-small btn-danger" , id: "link-Remove_Image" %>
 </div>

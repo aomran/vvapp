@@ -1,22 +1,15 @@
 require 'test_helper'
 
-class ArtSubmissionsTest < Capybara::Rails::TestCase
-
-  def login_as(user)
-    visit login_path
-    fill_in 'Courriel', with: user.email
-    fill_in 'Mot de passe', with: 'password123'
-    click_button 'Connexion'
-  end
+class SubmissionImagesTest < Capybara::Rails::TestCase
 
   def attach_image_as(image, user_with_submission)
     user_submission = user_with_submission.submissions.first
     login_as(user_with_submission)
 
-    click_link 'Continuez Soumission'
+    click_link 'link-Continue_Sub'
     assert_equal submission_path(user_submission), current_path
 
-    click_link 'Ajoutez Images'
+    click_link 'link-Add_Images'
     assert current_path == submission_images_path(user_submission)
 
     attach_file "Fichiers d'Images", "#{Rails.root}/test/fixtures/images/#{image}"
@@ -27,7 +20,7 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     attach_image_as(image, users(:paula))
 
     assert_difference 'Image.count' do
-      click_button 'Déposer soumission'
+      click_button 'btn-Submit_Sub'
     end
 
     user_submission_image = users(:paula).submissions.first.images.second
@@ -38,12 +31,12 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     image = "SyntacticSugar.jpg"
     attach_image_as(image, users(:paula))
     user_submission = users(:paula).submissions.first
-    click_button 'Déposer soumission'
+    click_button 'btn-Submit_Sub'
 
     added_image = Image.last
     assert_difference 'Image.count', -1 do
       within "#image_#{added_image.id}" do
-        click_link 'Enlever'
+        click_link 'link-Remove_Image'
       end
     end
     assert_equal submission_images_path(user_submission), current_path
@@ -53,7 +46,7 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     image = "SyntacticSugar.jpg"
     attach_image_as(image, users(:paula))
     user_submission = users(:paula).submissions.first
-    click_button 'Déposer soumission'
+    click_button 'btn-Submit_Sub'
 
     assert_equal submission_images_path(user_submission), current_path
     assert page.has_xpath?("//img[contains(@src, \"#{image}\")]"), 'image not found on show page'
@@ -61,9 +54,9 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
 
   test "artist can finalize submission" do
     login_as(users(:paula))
-    click_link 'Continuez Soumission'
-    click_link 'Ajoutez Images'
-    click_button 'Finalisez Soumission'
+    click_link 'link-Continue_Sub'
+    click_link 'link-Add_Images'
+    click_button 'btn-Finalize_Sub'
 
     user_submission_id = users(:paula).submissions.first.id
     user_submission = Submission.find(user_submission_id)

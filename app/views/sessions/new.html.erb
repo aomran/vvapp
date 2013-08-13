@@ -12,14 +12,14 @@
         <div class="controls"><%= password_field_tag :password %></div>
       </div>
       <div class="control-group">
-        <div class="controls"><%= submit_tag "Connexion" %></div>
+        <div class="controls"><%= submit_tag "Connexion", id: "btn-Connect"%></div>
       </div>
     <% end %>
   </div>
 
   <div class="span4 display-content">
      <h2>Pas de compte?</h2>
-     <p><a href="/register">Inscrivez-vous</a>, s'il vous plait.
+     <p><a href="/register" id: "link-please_sign_up">Inscrivez-vous</a>, s'il vous plait.
      </p>
   </div>
 </div>

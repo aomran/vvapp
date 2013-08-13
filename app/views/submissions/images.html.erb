@@ -11,11 +11,11 @@
   </div>
 
   <div class="control-group">
-    <div class="controls"> <%= f.submit "Déposer soumission" %></div>
+    <div class="controls"> <%= f.submit "Déposez soumission", id: "btn-Submit_Sub" %></div>
   </div>
 
 <% end %>
-<%= button_to 'Finalisez Soumission', complete_submission_path(@submission), class: "btn btn-primary btn-large  btn-right"%>
+<%= button_to 'Finalisez Soumission', complete_submission_path(@submission), class: "btn btn-primary btn-large  btn-right", id: "btn-Finalize_Sub"%>
 
 <div class="images">
   <%= render @submission.images %>
