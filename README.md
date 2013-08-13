@@ -17,7 +17,7 @@ The admin team at Voix Visuelle will have most of the work already done for them
 ## More navigation
 * ~~Breadcrumbs -- Étape 1 (profile), 2 (text documents submission), 3 (images)~~ Implemented for steps 1 and 2.
 * ~~Put Étape 3 de 3 (menu bar 2/3 full) when user starts submitting images.~~
-* Étape 3 de 3 (menu bar 3/3 full) when images are all in.
+* Étape 3 de 3 (menu bar 3/3 full) when images are all in, i.e., when Finalisez Soumission is clicked?
 * ~~Notification of completion~~
 * ~~Way for user to finalize submission/step 3; a way for user and app to do a sort of handshake, agreeing on one side that the submission is valid; on the other side that the user considers themselves done. Link could set a field in submission object of "complete." (They can still return to edit submission if they want)~~
 
@@ -26,9 +26,11 @@ The admin team at Voix Visuelle will have most of the work already done for them
 
 ## Document Submission
 * ~~Make file uploads in submissions~~
+* The Edit submissions page should display the currently uploaded document filenames, and should not break if the user changes their mind and clicks "enregistrer modifications" without having made any modifications.
+* How does one access the profile page from the submissions pages?
 
 ##Image loader
-* The image-saving button currently named "Déposer soumission" on the submission show page should be renamed "Ajouter Images" and it should only appear if JS is disabled
+* ~~The image-saving button currently named "Déposer soumission" on the submission show page should be renamed "Ajouter Images" and~~ it should only appear if JS is disabled
 * Image loader needs explanations, french text
 * ~~The ability to remove images needs to be added~~
 * ~~Adding images should not be on the display submission page but rather on a new (or add) images page~~
