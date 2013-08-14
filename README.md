@@ -39,6 +39,7 @@ The admin team at Voix Visuelle will have most of the work already done for them
 ##Validations
 * For images: ~~type~~, number, ~~size (pixel dimensions min/max; filesize max)~~, possibly filename format, uniqueness of filename.
 * Others: presence of all the profile info; some basic checks perhaps. Presence of all the required documents.
+* Handle/display-to-user validation failures
 
 ##Admin
 * Notably, the restriction of access to appropriate pages
