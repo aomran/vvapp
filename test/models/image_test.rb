@@ -20,4 +20,14 @@ class ImageTest < ActiveSupport::TestCase
     image.valid?
     assert image.errors[:height].any?, 'Tall image should be invalid'
   end
+
+  test "small images are invalid" do
+    image = Image.new
+    uploader = ImageUploader.new(image, :image_file)
+
+    uploader.store!(File.open("#{Rails.root}/test/fixtures/images/too_small_image.jpg"))
+
+    image.valid?
+    assert image.errors[:width].any?, 'Small image should be invalid'
+  end
 end

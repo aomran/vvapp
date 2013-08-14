@@ -37,7 +37,7 @@ The admin team at Voix Visuelle will have most of the work already done for them
 * ~~A list of filenames of images should be displayed as well as the thumbnails~~
 
 ##Validations
-* For images: type, number, size (pixel dimensions min/max; filesize max), possibly filename format, uniqueness of filename.
+* For images: ~~type~~, number, ~~size (pixel dimensions min/max; filesize max)~~, possibly filename format, uniqueness of filename.
 * Others: presence of all the profile info; some basic checks perhaps. Presence of all the required documents.
 
 ##Admin

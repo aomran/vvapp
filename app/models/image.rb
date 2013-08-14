@@ -16,6 +16,10 @@ class Image < ActiveRecord::Base
     if height > 768
       errors.add(:height, "You cannot upload a file whose height is greater than 768")
     end
+    if width < 750 && height < 750
+      errors.add(:width, "You cannot upload a file with both width and height less than 750")
+    end
+
   end
 
 end
