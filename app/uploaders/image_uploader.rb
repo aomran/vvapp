@@ -42,6 +42,22 @@ class ImageUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg)
   end
 
+  # for image size validation
+  # fetching dimensions in uploader, validating it in model
+  before :cache, :capture_size_before_cache # callback, example here: http://goo.gl/9VGHI
+  def capture_size_before_cache(new_file)
+    if model.width.nil? || model.height.nil?
+      model.width, model.height = `identify -format "%wx %h" #{new_file.path}`.split(/x/).map { |dim| dim.to_i }
+    end
+  end
+
+  # def get_image_dimensions
+  #   if @file
+  #     width, height = `identify -format "%wx%h" #{file.path}`.split(/x/)
+  #     @dimensions = [width.to_i, height.to_i]
+  #   end
+  #   @dimensions
+  # end
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename
