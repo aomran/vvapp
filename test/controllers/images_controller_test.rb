@@ -4,9 +4,12 @@ class ImagesControllerTest < ActionController::TestCase
   test "should add image to submission" do
     session[:user_id] = users(:paula).id
     submission = users(:paula).submissions.first
-    post :create, image: {image_file: 'art.jpg'}, submission_id: submission.id
 
-    assert_equal submission.images.size, 2
+    image_file = Rack::Test::UploadedFile.new(File.open("#{Rails.root}/test/fixtures/images/perfect_size.jpg"))
+
+    post :create, image: {image_file: image_file}, submission_id: submission.id
+
+    assert_equal 2, submission.images.size
     assert_redirected_to submission_images_path(submission)
   end
 

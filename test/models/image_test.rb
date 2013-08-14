@@ -7,7 +7,8 @@ class ImageTest < ActiveSupport::TestCase
 
     uploader.store!(File.open("#{Rails.root}/test/fixtures/images/too_wide_image.jpg"))
 
-    assert image.invalid?, 'Wide image should be invalid'
+    image.valid?
+    assert image.errors[:width].any?, 'Wide image should be invalid'
   end
 
   test "tall images are invalid" do
@@ -16,6 +17,7 @@ class ImageTest < ActiveSupport::TestCase
 
     uploader.store!(File.open("#{Rails.root}/test/fixtures/images/too_tall_image.jpg"))
 
-    assert image.invalid?, 'Tall image should be invalid'
+    image.valid?
+    assert image.errors[:height].any?, 'Tall image should be invalid'
   end
 end
