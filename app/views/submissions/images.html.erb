@@ -2,6 +2,25 @@
   <div class="bar" style="width: 66%;"></div>
 </div>
 <div class="progress-label">Étape 3 de 3</div>
+
+<p>Utilisez les boutons "Choose File/Choisissez fichier" ou
+  glisser-déposer les fichier d'images dans la boîte bleue.</p>
+
+<p>En glissant-déposant, plusieurs images peuvent être ajoutés d'un coup. </p>
+
+<p>Le mode glisser-déposer marche seulement si Javascript est activé dans votre browser. Le cas échéant, il faut utilser le bouton "Ajouter Images". </p>
+
+<p>Un dossier doit comprendre 20 images numériques, ou 10 minutes maximum de documentation vidéo.</p>
+<p>Les images numériques doivent:</p>
+<ul>
+  <li>être en format JPEG, avec extension de fichier .jpg </li>
+  <li>ne pas dépasser 1024 (largeur) x 768 (hauteur) pixels</li>
+  <li>avoir un minimum de 750 pixels dans au moins une dimension (largeur ou hauteur) </li>
+
+<li>être de mode couleur RVB, sRVB ou gamme de gris</li>
+</ul>
+<p>Chaque nom de fichier d’image doit avoir un numéro, le nom de l’artiste et le titre de l’œuvre.</p>
+
 <%= form_for [@submission, Image.new], html: {class: 'form-horizontal'} do |f| %>
 
   <div class="control-group">
@@ -11,7 +30,7 @@
   </div>
 
   <div class="control-group">
-    <div class="controls"> <%= f.submit "Déposez soumission", id: "btn-Submit_Sub" %></div>
+    <div class="controls"> <%= f.submit "Ajouter images", class: "btn btn-small btn-inverse", id: "btn-Submit_Sub" %></div>
   </div>
 
 <% end %>
