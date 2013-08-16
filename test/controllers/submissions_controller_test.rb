@@ -26,10 +26,16 @@ class SubmissionsControllerTest < ActionController::TestCase
   end
 
   test "should set submission as complete" do
-    post :complete, id: submissions(:one).id
+    sub = Submission.new
+    sub.artist_statement = File.open("#{Rails.root}/test/fixtures/documents/statement.pdf")
+    sub.expo_project = File.open("#{Rails.root}/test/fixtures/documents/expo.pdf")
+    sub.cv = File.open("#{Rails.root}/test/fixtures/documents/cv.pdf")
+    sub.image_list = File.open("#{Rails.root}/test/fixtures/documents/image_list.pdf")
+    sub.save
 
-    submission = Submission.find(submissions(:one).id)
-    p submission.valid?
+    post :complete, id: sub.id
+
+    submission = Submission.find(sub.id)
     assert_equal true, submission.complete
     assert_redirected_to profile_path
 

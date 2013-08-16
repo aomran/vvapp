@@ -53,13 +53,14 @@ class SubmissionImagesTest < Capybara::Rails::TestCase
   end
 
   test "artist can finalize submission" do
-    login_as(users(:paula))
+    set_real_submission(users(:bob))
+    login_as(users(:bob))
     click_link 'link-Continue_Sub'
     click_link 'link-Add_Images'
     click_button 'btn-Finalize_Sub'
 
-    user_submission_id = users(:paula).submissions.first.id
-    user_submission = Submission.find(user_submission_id)
+
+    user_submission = Submission.find(@sub)
     assert_equal true, user_submission.complete, 'The submission is not complete'
     assert_equal profile_path, current_path
     assert page.has_content?('Votre Soumission est complete')

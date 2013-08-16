@@ -22,4 +22,14 @@ class ActiveSupport::TestCase
     fill_in :password, with: 'password123'
     click_button 'btn-Connect'
   end
+
+  def set_real_submission(user)
+    @sub = Submission.new
+    @sub.artist_statement = File.open("#{Rails.root}/test/fixtures/documents/statement.pdf")
+    @sub.expo_project = File.open("#{Rails.root}/test/fixtures/documents/expo.pdf")
+    @sub.cv = File.open("#{Rails.root}/test/fixtures/documents/cv.pdf")
+    @sub.image_list = File.open("#{Rails.root}/test/fixtures/documents/image_list.pdf")
+    @sub.user = user
+    @sub.save
+  end
 end

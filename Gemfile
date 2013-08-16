@@ -38,6 +38,10 @@ end
 group :test do
   gem 'minitest-rails-capybara'
 end
+
+group :test, :development do
+gem 'pry-rails'
+end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -45,6 +49,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'jquery-fileupload-rails'
 gem 'jquery-turbolinks'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
