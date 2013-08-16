@@ -29,6 +29,7 @@ class SubmissionsControllerTest < ActionController::TestCase
     post :complete, id: submissions(:one).id
 
     submission = Submission.find(submissions(:one).id)
+    p submission.valid?
     assert_equal true, submission.complete
     assert_redirected_to profile_path
 
