@@ -25,7 +25,7 @@ The admin team at Voix Visuelle will have most of the work already done for them
 
 ## Document Submission
 * ~~Make file uploads in submissions~~
-* The Edit submissions page should display the currently uploaded document filenames, and should not break if the user changes their mind and clicks "enregistrer modifications" without having made any modifications.
+* The Edit submissions page should display the currently uploaded document filenames, and ~~should not break if the user changes their mind and clicks "enregistrer modifications" without having made any modifications.~~
 * How does one access the profile page from the submissions pages?
 
 ##Image loader

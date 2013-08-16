@@ -2,27 +2,37 @@
 
   <div class="control-group">
     <%= f.label :cv, "CV", :class => "control-label" %>
-    <div class="controls"><%= f.file_field :cv %> Curriculum vitae (trois pages maximum)</div>
+    <div class="controls"><%= f.file_field :cv %> Curriculum vitae (trois pages maximum)
+    <%= f.hidden_field :cv_cache %>
+    </div>
   </div>
 
   <div class="control-group">
     <%= f.label :artist_statement, "Démarche", :class => "control-label" %>
-    <div class="controls"><%= f.file_field :artist_statement %> Démarche d'Artiste (un page)</div>
+    <div class="controls"><%= f.file_field :artist_statement %> Démarche d'Artiste (un page)
+    <%= f.hidden_field :artist_statement_cache %>
+    </div>
   </div>
 
   <div class="control-group">
     <%= f.label :expo_project, "Projet", :class => "control-label" %>
-    <div class="controls"><%= f.file_field :expo_project %> Projet d'Exposition</div>
+    <div class="controls"><%= f.file_field :expo_project %> Projet d'Exposition
+    <%= f.hidden_field :expo_project_cache %>
+    </div>
   </div>
 
   <div class="control-group">
     <%= f.label :special_needs, "Exigences spéciales (optionelle)", :class => "control-label" %>
-    <div class="controls"><%= f.file_field :special_needs %> Toute exigence spéciale pour l'installation</div>
+    <div class="controls"><%= f.file_field :special_needs %> Toute exigence spéciale pour l'installation
+    <%= f.hidden_field :special_needs_cache %>
+    </div>
   </div>
 
   <div class="control-group">
     <%= f.label :image_list, "Liste d'Images", :class => "control-label" %>
-    <div class="controls"><%= f.file_field :image_list %></div>
+    <div class="controls"><%= f.file_field :image_list %>
+    <%= f.hidden_field :image_list_cache %>
+    </div>
   </div>
 
   <div class="control-group">
