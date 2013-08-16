@@ -10,28 +10,23 @@
   <div class="table-profile">
   <table class="table table-striped">
   <tr>
-    <td>CV: </td>
-    <td> <%= @submission.cv %></td>
+    <td><%= link_to 'CV', @submission.cv.url %> </td>
   </tr>
 
   <tr>
-    <td>Démarche: </td>
-    <td> <%= @submission.artist_statement %></td>
+    <td><%= link_to 'Démarche', @submission.artist_statement.url %> </td>
   </tr>
 
   <tr>
-    <td>Projet: </td>
-    <td> <%= @submission.expo_project %></td>
+    <td><%= link_to 'Projet', @submission.expo_project.url %> </td>
   </tr>
 
   <tr>
-    <td>Exigences Spéciales: </td>
-    <td> <%= @submission.special_needs %></td>
+    <td><%= link_to 'Exigences Spéciales', @submission.special_needs.url %> </td>
   </tr>
 
   <tr>
-    <td>Liste d'Images: </td>
-    <td> <%= @submission.image_list %></td>
+    <td><%= link_to "Liste d'Images", @submission.image_list.url %> </td>
   </tr>
 </table>
 </div>
