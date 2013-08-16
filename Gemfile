@@ -49,7 +49,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'jquery-fileupload-rails'
 gem 'jquery-turbolinks'
-
+gem 'dynamic_form'
 # Use unicorn as the app server
 # gem 'unicorn'
 
