@@ -28,10 +28,11 @@
     <div class="controls"><%= f.file_field :image_file, multiple: true, name: "image[image_file]" %>
     </div>
   </div>
-
-  <div class="control-group">
-    <div class="controls"> <%= f.submit "Ajouter images", class: "btn btn-small btn-inverse", id: "btn-Submit_Sub" %></div>
-  </div>
+  <noscript>
+    <div class="control-group">
+      <div class="controls"> <%= f.submit "Ajouter images", class: "btn btn-small btn-inverse", id: "btn-Submit_Sub" %></div>
+    </div>
+  </noscript>
 
 <% end %>
 <%= button_to 'Finalisez Soumission', complete_submission_path(@submission), class: "btn btn-primary btn-large  btn-right", id: "btn-Finalize_Sub"%>

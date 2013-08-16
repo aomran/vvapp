@@ -30,7 +30,7 @@ The admin team at Voix Visuelle will have most of the work already done for them
 * How does one access the profile page from the submissions pages?
 
 ##Image loader
-* ~~The image-saving button currently named "Déposer soumission" on the submission show page should be renamed "Ajouter Images" and~~ it should only appear if JS is disabled
+* ~~The image-saving button currently named "Déposer soumission" on the submission show page should be renamed "Ajouter Images" and it should only appear if JS is disabled~~
 * ~~Image loader needs explanations, french text~~
 * ~~The ability to remove images needs to be added~~
 * ~~Adding images should not be on the display submission page but rather on a new (or add) images page~~
