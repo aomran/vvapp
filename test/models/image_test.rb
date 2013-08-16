@@ -30,4 +30,19 @@ class ImageTest < ActiveSupport::TestCase
     image.valid?
     assert image.errors[:width].any?, 'Small image should be invalid'
   end
+  test "Images with duplicate names are invalid" do
+    image = Image.new
+    uploader = ImageUploader.new(image, :image_file)
+
+    uploader.store!(File.open("#{Rails.root}/test/fixtures/images/perfect_size.jpg"))
+    image.save
+
+    image2 = Image.new
+    uploader2 = ImageUploader.new(image2, :image_file)
+
+    uploader2.store!(File.open("#{Rails.root}/test/fixtures/images/perfect_size.jpg"))
+
+    image2.valid?
+    assert image2.errors[:file_name].any?, 'Image with duplicate name should be invalid'
+  end
 end
