@@ -1,0 +1,26 @@
+fr:
+  activerecord:
+    attributes:
+      user: "utilisateur"
+      submission:
+        cv: "CV"
+        image_list: "Liste d'images"
+        expo_project: "Projet d'Exposition"
+        artist_statement: "Démarche d'Artiste"
+    errors:
+      models:
+        submission:
+          attributes:
+            cv:
+              blank: "manquant"
+            image_list:
+              blank: "manquant"
+            expo_project:
+              blank: "manquant"
+            artist_statement:
+              blank: "manquant"
+      template:
+        header:
+          one:   "1 erreur a empêché cette %{model} d'être sauvegardé"
+          other: "%{count} erreurs ont empêché cette %{model} d'être sauvegardé"
+        body:    "Il y avait les problèmes suivants:"
