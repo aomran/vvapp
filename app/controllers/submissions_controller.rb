@@ -25,7 +25,7 @@ class SubmissionsController < ApplicationController
     @submission = @user.submissions.build(submission_params)
 
     if @submission.save
-      redirect_to submission_path(@submission), notice: "Votre soumission a été reçu!"
+      redirect_to submission_path(@submission), notice: "Vos documents ont été reçus!"
     else
       render :new
     end
