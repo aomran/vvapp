@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
       redirect_to login_path, alert: 'Veuillez vous connecter ou vous inscrire avant de faire une soumission de dossier'
     end
   end
+
+  def set_locale_to_french
+    I18n.locale = :fr
+  end
 end

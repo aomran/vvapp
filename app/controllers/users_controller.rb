@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :set_locale_to_french
   before_action :check_user_login, except: [:new, :create]
 
   def new

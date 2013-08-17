@@ -1,6 +1,8 @@
 class ImagesController < ApplicationController
+  before_action :set_locale_to_french
   before_action :check_user_login
   before_action :get_submission
+
 
   def create
     @image = Image.new(image_params)

@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-
+  before_action :set_locale_to_french
   def new
   end
 

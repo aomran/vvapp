@@ -1,5 +1,5 @@
 class SubmissionsController < ApplicationController
-
+  before_action :set_locale_to_french
   before_action :check_user_login
   before_action :get_submission, except: [:new, :create]
 
