@@ -12,12 +12,6 @@ class UsersControllerTest < ActionController::TestCase
     session[:user_id] = users(:paula).id
   end
 
-  test "should get list of all users" do
-    get :index
-    assert assigns(:users), 'Collection of users not passed to view'
-    assert :success
-  end
-
   test "should show profile for current user" do
     get :profile
 

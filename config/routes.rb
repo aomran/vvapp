@@ -1,22 +1,30 @@
 Vvapp::Application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+
   root 'users#profile'
 
-  resources :users, except: [:show, :edit, :update]
+  # ADMIN Routes
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
+  # SUBMISSION Routes
   resources :submissions do
     get 'images', on: :member
     post 'complete', on: :member
     resources :images, only: [:create, :destroy]
   end
 
+  # SESSION Routes
   get "/login", to: "sessions#new", as: "login"
   post "/login", to: "sessions#create"
   get '/logout', to: "sessions#destroy"
+
+  # USER Routes
+  resources :users, only: [:new, :create]
   get "/register", to: "users#new", as: "register"
   get '/profile', to: "users#profile"
   get '/profile/edit', to: "users#edit_profile", as: "edit_profile"
   patch '/profile', to: 'users#update_profile', as: 'update_profile'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

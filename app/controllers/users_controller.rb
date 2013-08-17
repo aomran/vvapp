@@ -2,10 +2,6 @@ class UsersController < ApplicationController
 
   before_action :check_user_login, except: [:new, :create]
 
-  def index
-    @users = User.all
-  end
-
   def new
     @user = User.new
   end
@@ -29,8 +25,8 @@ class UsersController < ApplicationController
   end
 
   def update_profile
-      @current_user.update(user_params)
-      redirect_to profile_path
+    @current_user.update(user_params)
+    redirect_to profile_path
   end
 
   private
