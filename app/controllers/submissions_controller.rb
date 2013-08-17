@@ -24,8 +24,11 @@ class SubmissionsController < ApplicationController
     @user = User.find(session[:user_id])
     @submission = @user.submissions.build(submission_params)
 
-    @submission.save
-    redirect_to submission_path(@submission), notice: "Votre soumission a été reçu!"
+    if @submission.save
+      redirect_to submission_path(@submission), notice: "Votre soumission a été reçu!"
+    else
+      render :new
+    end
   end
 
   def edit

@@ -1,0 +1,11 @@
+<% if @current_user.has_submission? && @current_user.recent_submission.complete %>
+  <div class="progress progress-success">
+    <div class="bar" style="width: 100%;"></div>
+  </div>
+  <div class="progress-label">Merci, soumission complète!</div>
+<% else %>
+  <div class="progress">
+    <div class="bar" style="width: <%=bar_percent%>%;"></div>
+  </div>
+  <div class="progress-label"><%= step %></div>
+<% end %>

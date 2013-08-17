@@ -1,7 +1,4 @@
-<div class="progress">
-  <div class="bar" style="width: 33%;"></div>
-</div>
-<div class="progress-label">Étape 2 de 3</div>
+<%= render partial: 'shared/progressbar', locals: { bar_percent: 33, step: "Étape 2 de 3"}%>
 
 <h1>Page soumission pour <%= @current_user.first_name + " " + @current_user.last_name%></h1>
 <h2>Faire votre soumission de dossier:</h2>

@@ -1,5 +1,9 @@
 <%= form_for @submission, html: {class: 'form-horizontal'} do |f| %>
 
+  <div class="errors">
+    <%= f.error_messages %>
+  </div>
+
   <div class="control-group">
     <%= f.label :cv, "CV", :class => "control-label" %>
     <div class="controls"><%= f.file_field :cv %> Curriculum vitae (trois pages maximum)
