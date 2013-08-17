@@ -15,8 +15,11 @@ class SubmissionsController < ApplicationController
   def create
     @submission = @current_user.submissions.build(submission_params)
 
-    @submission.save
-    redirect_to submission_path(@submission), notice: "Votre soumission a été reçu!"
+    if @submission.save
+      redirect_to submission_path(@submission), notice: "Vos documents ont été reçus!"
+    else
+      render :new
+    end
   end
 
   def show

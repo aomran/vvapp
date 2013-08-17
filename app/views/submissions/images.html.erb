@@ -1,7 +1,4 @@
-<div class="progress">
-  <div class="bar" style="width: 66%;"></div>
-</div>
-<div class="progress-label">Étape 3 de 3</div>
+<%= render partial: 'shared/progressbar', locals: { bar_percent: 66, step: "Étape 3 de 3"}%>
 
 <p>Utilisez les boutons "Choose File/Choisissez fichier" ou
   glisser-déposer les fichier d'images dans la boîte bleue.</p>

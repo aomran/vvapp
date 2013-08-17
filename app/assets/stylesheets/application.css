@@ -47,4 +47,10 @@ width:600px;
  display: inline;
  float: right;
 }
-
+.errorExplanation { color: #222;
+          border: 2px solid red;
+          padding: 1em;
+          margin-bottom: 2em;
+          background-color: #f6f6f6;
+          font: bold smaller;}
+.errorExplanation h2 {color: #b00;}

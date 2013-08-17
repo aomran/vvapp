@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   def has_submission?
     self.submissions.any?
   end
+
+  def recent_submission
+    self.submissions.last
+  end
 end

@@ -1,0 +1,56 @@
+fr:
+  activerecord:
+    models:
+      user: "compte d'utilisateur"
+      submission: "soumission"
+    attributes:
+      user:
+        last_name: "Nom de famille"
+        email: "Courriel"
+        phone_number: "Numéro de téléphone"
+        street_address: "Adresse de rue"
+        city: "Ville"
+        postal_code: "Code Postal"
+        country: "Pays"
+        password: "Mot de passe"
+      submission:
+        cv: "CV"
+        image_list: "Liste d'images"
+        expo_project: "Projet d'Exposition"
+        artist_statement: "Démarche d'Artiste"
+    errors:
+      models:
+        user:
+          attributes:
+            last_name:
+              blank: "manquant"
+            email:
+              blank: "manquant"
+            phone_number:
+              blank: "manquant"
+            street_address:
+              blank: "manquant"
+            city:
+              blank: "manquant"
+            postal_code:
+              blank: "manquant"
+            country:
+              blank: "manquant"
+            password:
+              blank: "manquant"
+        submission:
+          attributes:
+            cv:
+              blank: "manquant"
+            image_list:
+              blank: "manquant"
+            expo_project:
+              blank: "manquant"
+            artist_statement:
+              blank: "manquant"
+      template:
+        header:
+          one:   "1 erreur a empêché cette %{model} d'être sauvegardé"
+          other: "%{count} erreurs ont empêché cette %{model} d'être sauvegardé"
+        body:    "Il y avait les problèmes suivants:"
+
