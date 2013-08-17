@@ -9,17 +9,11 @@ class SubmissionsControllerTest < ActionController::TestCase
     post :create, submission: {
       cv: 'cv.pdf', artist_statement: 'statement.pdf', expo_project: 'expo.pdf', special_needs: 'special.pdf', image_list: 'image_list.pdf'
     }
-    assert assigns(:user)
-    assert_equal assigns(:user).submissions.size, 1
-  end
-
-  test "should get list of all submissions" do
-    get :index
-    assert assigns(:submissions)
-    assert :success
+    assert_equal assigns(:current_user).submissions.size, 1
   end
 
   test "should get single submission" do
+    session[:user_id] = users(:paula).id
     get :show, id: submissions(:one).id
     assert :success
     assert assigns(:submission)
@@ -31,6 +25,7 @@ class SubmissionsControllerTest < ActionController::TestCase
     sub.expo_project = File.open("#{Rails.root}/test/fixtures/documents/expo.pdf")
     sub.cv = File.open("#{Rails.root}/test/fixtures/documents/cv.pdf")
     sub.image_list = File.open("#{Rails.root}/test/fixtures/documents/image_list.pdf")
+    sub.user = users(:bob)
     sub.save
 
     post :complete, id: sub.id

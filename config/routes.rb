@@ -7,7 +7,7 @@ Vvapp::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   # SUBMISSION Routes
-  resources :submissions do
+  resources :submissions, except: [:index] do
     get 'images', on: :member
     post 'complete', on: :member
     resources :images, only: [:create, :destroy]
