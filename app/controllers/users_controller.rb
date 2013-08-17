@@ -2,10 +2,6 @@ class UsersController < ApplicationController
 
   before_action :check_user_login, except: [:new, :create]
 
-  def index
-    @users = User.all
-  end
-
   def new
     @user = User.new
   end
@@ -14,14 +10,14 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to profile_path
+      redirect_to profile_path, notice: "Vous avez réussi à créer votre compte d'utilisateur."
     else
       render :new
     end
   end
 
   def profile
-    @submission = @current_user.submissions.first
+    @submission = @current_user.recent_submission
   end
 
   def edit_profile
@@ -29,8 +25,11 @@ class UsersController < ApplicationController
   end
 
   def update_profile
-      @current_user.update(user_params)
-      redirect_to profile_path
+    if @current_user.update(user_params)
+      redirect_to profile_path, notice: "Vous avez réussi à éditer votre information d'utilisateur."
+    else
+      render :edit_profile
+    end
   end
 
   private

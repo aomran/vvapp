@@ -34,7 +34,7 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
 
     assert_equal bob_submission, Submission.last
 
-    assert current_path == submission_path(bob_submission), 'Was not redirected to Bob submission page'
+    assert current_path == submission_path, 'Was not redirected to Bob submission page'
     assert page.has_content?("Vos documents ont été reçus!"), 'Notice about submission received not shown'
   end
 
@@ -51,10 +51,10 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     paula_submission = users(:paula).submissions.first
 
     click_link 'link-Continue_Sub'
-    assert current_path == submission_path(paula_submission), 'Did not go to the submission show page'
+    assert current_path == submission_path, 'Did not go to the submission show page'
 
     click_link 'link-Edit_Sub'
-    assert current_path == edit_submission_path(paula_submission), 'Did not go to the submission edit page'
+    assert current_path == edit_submission_path, 'Did not go to the submission edit page'
 
     old_file_path = paula_submission.cv_url
     attach_file "CV", "#{Rails.root}/test/fixtures/documents/cv_new.pdf"
@@ -64,7 +64,7 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     attach_file "Liste d'Images", "#{Rails.root}/test/fixtures/documents/image_list_new.pdf"
     click_button 'Submit_submission'
 
-    assert current_path == submission_path(paula_submission), 'Did not go to the show submission page'
+    assert current_path == submission_path, 'Did not go to the show submission page after edit'
     paula_submission = users(:paula).submissions.first
 
     assert paula_submission.cv_url != old_file_path, 'CV was not updated'

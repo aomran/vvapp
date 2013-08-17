@@ -53,6 +53,7 @@ gem 'dynamic_form'
 # Use unicorn as the app server
 # gem 'unicorn'
 
+gem 'activeadmin', github: 'gregbell/active_admin', branch: 'rails4'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
