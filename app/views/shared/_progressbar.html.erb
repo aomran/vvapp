@@ -1,4 +1,4 @@
-<% if @current_user.has_submission? && @current_user.recent_submission.complete %>
+<% if @current_user && @current_user.has_submission? && @current_user.recent_submission.complete %>
   <div class="progress progress-success">
     <div class="bar" style="width: 100%;"></div>
   </div>
