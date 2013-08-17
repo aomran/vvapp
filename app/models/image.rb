@@ -6,10 +6,6 @@ class Image < ActiveRecord::Base
   validate :image_dimensions
   validates :file_name, uniqueness: true
 
-  def filename
-    File.basename(image_file.url, '.*').titleize
-  end
-
   def image_dimensions
     if width > 1024
       errors.add(:width, "Vous ne pouvez pas attacher une image avec une largeur plus grande que 1024px")

@@ -54,7 +54,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   def get_file_name(new_file)
     if model.file_name.nil?
-      model.file_name = File.basename(new_file.path, '.*')
+      model.file_name = new_file.original_filename
     end
   end
   # def get_image_dimensions

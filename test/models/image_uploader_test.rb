@@ -28,6 +28,6 @@ class ImageUploaderTest < ActiveSupport::TestCase
     uploader = ImageUploader.new(image, :image_file)
     uploader.store!(File.open("#{Rails.root}/test/fixtures/images/perfect_size.jpg"))
 
-    assert_equal "perfect_size", image.file_name
+    assert_equal "perfect_size.jpg", image.file_name
   end
 end
