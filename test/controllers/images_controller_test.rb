@@ -10,7 +10,7 @@ class ImagesControllerTest < ActionController::TestCase
     post :create, image: {image_file: image_file}, submission_id: submission.id
 
     assert_equal 2, submission.images.size
-    assert_redirected_to submission_images_path(submission)
+    assert_redirected_to submission_images_path
   end
 
   test "should delete an image" do
@@ -22,7 +22,7 @@ class ImagesControllerTest < ActionController::TestCase
       delete :destroy, submission_id: submission.id, id: image.id
     end
 
-    assert_redirected_to submission_images_path(submission)
+    assert_redirected_to submission_images_path
   end
 
 end

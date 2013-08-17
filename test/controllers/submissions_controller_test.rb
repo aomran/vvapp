@@ -14,7 +14,7 @@ class SubmissionsControllerTest < ActionController::TestCase
 
   test "should get single submission" do
     session[:user_id] = users(:paula).id
-    get :show, id: submissions(:one).id
+    get :show
     assert :success
     assert assigns(:submission)
   end

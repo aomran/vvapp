@@ -32,7 +32,7 @@
   </noscript>
 
 <% end %>
-<%= button_to 'Finalisez Soumission', complete_submission_path(@submission), class: "btn btn-primary btn-large  btn-right", id: "btn-Finalize_Sub"%>
+<%= button_to 'Finalisez Soumission', complete_submission_path, class: "btn btn-primary btn-large  btn-right", id: "btn-Finalize_Sub"%>
 
 <div class="images">
   <%= render @submission.images %>

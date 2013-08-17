@@ -8,7 +8,6 @@ class SubmissionsController < ApplicationController
       redirect_to profile_path, alert: "Vous avez déjà une soumission"
     else
       @submission = Submission.new
-      @submission.images.new
     end
   end
 
@@ -16,7 +15,7 @@ class SubmissionsController < ApplicationController
     @submission = @current_user.submissions.build(submission_params)
 
     if @submission.save
-      redirect_to submission_path(@submission), notice: "Vos documents ont été reçus!"
+      redirect_to submission_path, notice: "Vos documents ont été reçus!"
     else
       render :new
     end
@@ -29,8 +28,11 @@ class SubmissionsController < ApplicationController
   end
 
   def update
-    @submission.update(submission_params)
-    redirect_to @submission
+    if @submission.update(submission_params)
+      redirect_to submission_path, notice: "Vos documents ont été mis à jour!"
+    else
+      render :edit
+    end
   end
 
   def images
@@ -44,7 +46,7 @@ class SubmissionsController < ApplicationController
 
   private
   def get_submission
-    @submission = @current_user.submissions.last
+    @submission = @current_user.recent_submission
   end
 
   def submission_params

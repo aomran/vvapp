@@ -7,11 +7,16 @@ Vvapp::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   # SUBMISSION Routes
-  resources :submissions, except: [:index] do
-    get 'images', on: :member
-    post 'complete', on: :member
-    resources :images, only: [:create, :destroy]
-  end
+  get 'submission', to: 'submissions#show', as: 'submission'
+  get 'submission/edit', to: 'submissions#edit', as: 'edit_submission'
+  patch 'submission', to: 'submissions#update'
+  post 'submission/complete', to: 'submissions#complete', as: 'complete_submission'
+  resources :submissions, only: [:new, :create]
+
+  # Submission IMAGES Routes
+  get 'submission/images', to: 'submissions#images'
+  post 'submission/images', to: 'images#create'
+  delete 'submission/images/:id', to: 'images#destroy', as: 'submission_image'
 
   # SESSION Routes
   get "/login", to: "sessions#new", as: "login"

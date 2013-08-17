@@ -7,10 +7,10 @@ class SubmissionImagesTest < Capybara::Rails::TestCase
     login_as(user_with_submission)
 
     click_link 'link-Continue_Sub'
-    assert_equal submission_path(user_submission), current_path
+    assert_equal submission_path, current_path
 
     click_link 'link-Add_Images'
-    assert current_path == submission_images_path(user_submission)
+    assert current_path == submission_images_path
 
     attach_file "Fichiers d'Images", "#{Rails.root}/test/fixtures/images/#{image}"
   end
@@ -39,7 +39,7 @@ class SubmissionImagesTest < Capybara::Rails::TestCase
         click_link 'link-Remove_Image'
       end
     end
-    assert_equal submission_images_path(user_submission), current_path
+    assert_equal submission_images_path, current_path
   end
 
   test "artist can see submission images on show page" do
@@ -48,7 +48,7 @@ class SubmissionImagesTest < Capybara::Rails::TestCase
     user_submission = users(:paula).submissions.first
     click_button 'btn-Submit_Sub'
 
-    assert_equal submission_images_path(user_submission), current_path
+    assert_equal submission_images_path, current_path
     assert page.has_xpath?("//img[contains(@src, \"#{image}\")]"), 'image not found on show page'
   end
 
