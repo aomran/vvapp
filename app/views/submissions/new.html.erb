@@ -1,9 +1,11 @@
+<div class="crumbs">
 <%= render partial: 'shared/progressbar', locals: { bar_percent: 33, step: "Étape 2 de 3"}%>
 
+</div>
+
 <h1>Page soumission pour <%= @current_user.first_name + " " + @current_user.last_name%></h1>
-<h2>Faire votre soumission de dossier:</h2>
-<p>Utilisez les boutons "Choose File/Choisissez fichier" ou
-  glisser-déposer les documents appropriés dans les boites bleues; en format .doc ou .pdf.</p>
+<h2>Faites votre soumission de dossier:</h2>
+<p>Utilisez les boutons blancs pour ajouter vos documents. Format .doc ou .pdf seulement.</p>
 <p>Toutes les documents sont requis sauf les Exigences spéciales.</p>
 
 <%= render partial: 'form', locals: { submit_text: 'Déposez soumission'} %>

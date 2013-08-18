@@ -10,6 +10,7 @@
 }
 h1 {
   font-size: 34px;
+  padding-bottom: 10px;
 }
 h2 {
   font-size: 28px;
@@ -43,10 +44,12 @@ body, form label{
 .navbar-inverse .nav>li>a {
   color: #bbb;}
 
+.btn{
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+}
 .btn-inverse{
--webkit-border-radius: 200px;
--moz-border-radius: 200px;
-border-radius: 200px;
 background: #838a90;
 background: -webkit-linear-gradient(-90deg, #838a90, #414549);
 background: -moz-linear-gradient(-90deg, #838a90, #414549);
@@ -80,7 +83,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFabb2b7', en
 }
 
 .btn-large {
-
   padding-top: 20px;
   padding-bottom: 20px;
   margin-top: 0px;
@@ -89,7 +91,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFabb2b7', en
   -moz-box-shadow:  3px 3px 5px #333;
   box-shadow: 3px 3px 5px #333;
 }
-form input {background-color: #888; color: #fff}
+
 form label {color: #555; font-weight: bold;}
 
 .progress{
@@ -103,4 +105,10 @@ padding: 5px;
 background-color: #d0d0f8;
 color: #333;
 border: solid 1px #333;
+}
+.profile-form input {
+padding: 5px;
+background-color: #fafafa;
+color: #333;
+border: solid 1px #999;
 }
