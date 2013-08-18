@@ -9,7 +9,12 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+  *= require bootstrap_and_overrides
+ *= require images
+ *= require sessions
+ *= require submissions
+ *= require users
+
  */
 #site-description {
 clear: right;

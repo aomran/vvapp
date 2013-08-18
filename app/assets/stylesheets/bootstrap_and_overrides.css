@@ -43,12 +43,44 @@ body, form label{
 .navbar-inverse .nav>li>a {
   color: #bbb;}
 
-.btn-small{margin: 6px;
-  -webkit-box-shadow:  2px 2px 2px #555;
-  -moz-box-shadow:  2px 2px 2px #555;
-  box-shadow: 2px 2px 2px #555;
+.btn-inverse{
+-webkit-border-radius: 200px;
+-moz-border-radius: 200px;
+border-radius: 200px;
+background: #838a90;
+background: -webkit-linear-gradient(-90deg, #838a90, #414549);
+background: -moz-linear-gradient(-90deg, #838a90, #414549);
+background: linear, -90deg, #838a90, #414549;
+font-weight: bold;
+font-size: 1.0em;
+font-family: Helvetica, Arial, sans-serif;
+line-height: 12px;
+margin-right: 3px;
+padding: 7px 16px 6px;
+text-decoration: none;
+-webkit-font-smoothing: antialiased;
+text-shadow: black 0 1px 0;
+box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 0 0px rgba(255, 255, 255, 0.2) inset;
+border: solid 1px #484e53;
+border-color: #484e53;
+border-top-color: #616a71;
+border-right-color: #484e53;
+border-bottom-color: #363b3f;
+border-left-color: #484e53;
+color: #efefef;
+
 }
+.btn-inverse:hover{
+background: #abb2b7;
+background: -webkit-linear-gradient(-90deg, #abb2b7, #686d71);
+background: -moz-linear-gradient(-90deg, #abb2b7, #686d71);
+background: linear, -90deg, #abb2b7, #686d71;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFabb2b7', endColorstr='#FF686d71');
+-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFabb2b7', endColorstr='#FF686d71');
+}
+
 .btn-large {
+
   padding-top: 20px;
   padding-bottom: 20px;
   margin-top: 0px;
