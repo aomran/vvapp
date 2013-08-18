@@ -7,25 +7,25 @@
   <div class="table-profile">
   <table class="table table-striped">
   <tr>
-    <td><%= link_to 'CV', @submission.cv.url %> </td>
+    <td><%= link_to 'CV', @submission.cv.url, :target => "_blank" %> </td>
   </tr>
 
   <tr>
-    <td><%= link_to 'Démarche', @submission.artist_statement.url %> </td>
+    <td><%= link_to 'Démarche', @submission.artist_statement.url, :target => "_blank" %> </td>
   </tr>
 
   <tr>
-    <td><%= link_to 'Projet', @submission.expo_project.url %> </td>
+    <td><%= link_to 'Projet', @submission.expo_project.url, :target => "_blank" %> </td>
   </tr>
 
   <% if @submission.special_needs.file %>
   <tr>
-    <td><%= link_to 'Exigences Spéciales', @submission.special_needs.url %> </td>
+    <td><%= link_to 'Exigences Spéciales', @submission.special_needs.url, :target => "_blank" %> </td>
   </tr>
   <% end %>
 
   <tr>
-    <td><%= link_to "Liste d'Images", @submission.image_list.url %> </td>
+    <td><%= link_to "Liste d'Images", @submission.image_list.url, :target => "_blank" %> </td>
   </tr>
 </table>
 </div>
