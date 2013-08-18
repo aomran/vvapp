@@ -26,7 +26,7 @@ The admin team at Voix Visuelle will have most of the work already done for them
 ## Document Submission
 * ~~Make file uploads in submissions~~
 * The Edit submissions page should display the currently uploaded document filenames, and ~~should not break if the user changes their mind and clicks "enregistrer modifications" without having made any modifications.~~
-* How does one access the profile page from the submissions pages?
+* ~~How does one access the profile page from the submissions pages?~~ On any page where the user is logged on, that isn't the profile page, there is a profile link in the menu bar now.
 
 ##Image loader
 * ~~The image-saving button currently named "Déposer soumission" on the submission show page should be renamed "Ajouter Images" and it should only appear if JS is disabled~~

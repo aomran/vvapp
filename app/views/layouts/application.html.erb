@@ -23,6 +23,9 @@
     <div class="navbar-inner">
       <ul class="nav">
       <% if @current_user %>
+        <% unless current_page?('/profile') %>
+          <li><a href="/profile">Profile</a></li>
+        <% end %>
         <li><a href="/logout">Se déconnecter</a></li>
       <% else %>
           <li class="<%= 'active' if current_page?(register_path) %>"><a href="/register">Inscrivez-vous</a></li>
