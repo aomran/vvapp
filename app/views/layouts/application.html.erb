@@ -23,8 +23,15 @@
     <div class="navbar-inner">
       <ul class="nav">
       <% if @current_user %>
-        <% unless current_page?('/profile') %>
-          <li><a href="/profile">Profile</a></li>
+        <% if @current_user.recent_submission.complete %>
+          <li class="<%= 'active' if current_page?('/submission/images') %>"><a href="/submission/images">Retournez aux Images</a></li>
+        <% end %>
+
+        <% if current_page?('/submission/images') || @current_user.recent_submission.complete %>
+          <li class="<%= 'active' if current_page?('/submission') %>"><a href="/submission">Retournez aux Documents</a></li>
+        <% end %>
+        <% if current_page?('/profile') || @current_user.recent_submission.complete %>
+          <li class="<%= 'active' if current_page?('/profile') %>"><a href="/profile">Profile</a></li>
         <% end %>
         <li><a href="/logout">Se déconnecter</a></li>
       <% else %>

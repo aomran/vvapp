@@ -50,7 +50,11 @@
 
 
   <% if @current_user.has_submission? %>
-    <%= link_to 'Continuez Soumission', submission_path, class: 'btn btn-large btn-primary', id: "link-Continue_Sub" %>
+    <% if @current_user.recent_submission.complete %>
+      <%= link_to 'Revisez Soumission', submission_path, class: 'btn btn-large btn-primary' %>
+    <% else %>
+      <%= link_to 'Continuez Soumission', submission_path, class: 'btn btn-large btn-primary', id: "link-Continue_Sub" %>
+    <% end %>
   <% else %>
     <%= link_to 'Commencez Dossier', new_submission_path, class: 'btn btn-large btn-primary' %>
   <% end %>

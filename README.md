@@ -15,11 +15,14 @@ The admin team at Voix Visuelle will have most of the work already done for them
 
 ## More navigation
 * ~~Breadcrumbs -- Étape 1 (profile), 2 (text documents submission), 3 (images)~~ Implemented for steps 1 and 2.
-* ~~Put Étape 3 de 3 (menu bar 2/3 full) when user starts submitting images.~~
-* ~~Étape 3 de 3 (menu bar 3/3 full) when images are all in, i.e., when Finalisez Soumission is clicked?~~ When complete tag is true, menu bar becomes full and green and there is a "Merci, soumission complète!" title replacing the Etapes title -- on all screens that have a menu bar.
+* ~~Put Étape 3 de 3 (progress bar 2/3 full) when user starts submitting images.~~
+* ~~Étape 3 de 3 (progress bar 3/3 full) when images are all in, i.e., when Finalisez Soumission is clicked?~~ When complete tag is true, progress bar becomes full and green and there is a "Merci, soumission complète!" title replacing the Etapes title -- on all screens that have a progress bar.
 * ~~Notification of completion~~
 * ~~Way for user to finalize submission/step 3; a way for user and app to do a sort of handshake, agreeing on one side that the submission is valid; on the other side that the user considers themselves done. Link could set a field in submission object of "complete." (They can still return to edit submission if they want)~~
 * ~~Made homesite and document links open on new pages~~
+* ~~Made Continuez Soumission button (on profile page) read Revisez Soumission if the sub is complete~~
+* ~~In addition to "On any page where the user is logged on, that isn't the profile page, there is a profile link in the menu bar now" as below, there is also a "Retournez aux Document" buttons on the image page~~
+* ~~Added "Retournez aux Documents", "Profile", and also "Retournez aux Image" to menu bar for all states where submission is complete; also in that case they show which of those is active. ~~
 
 ##Profile
 * ~~Change Femme/Homme to a radio button~~
