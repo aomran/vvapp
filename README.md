@@ -6,54 +6,63 @@ Artists will be able to create accounts and store their personal information. Th
 
 The admin team at Voix Visuelle will have most of the work already done for them by the rails application, they can focus on evaluating the work and making decisions.
 
-# To-do:
-## Menu bar functionality
-* ~~Make the calling of the pre-method check_user_login more universal~~ Done.
-* ~~Finish implementing the menu bar functionality Paula was working on:~~
-	* ~~On profile page, if currently logged-on user has a submission in progress, the menu bar should give access to **Editez Soumission**; otherwise, the menu bar should give access to **Créez Soumission**.~~ Decided to not implement in order to keep UI streamlined.
-* ~~More menu bar functionality: for example root menu bar should allow possibility to access profile, to access submission, if the user is logged on, instead of leaving them with nowhere to go but to log off.Instead, redefined root path to point to profile.~~
-
-## More navigation
-* ~~Breadcrumbs -- Étape 1 (profile), 2 (text documents submission), 3 (images)~~ Implemented for steps 1 and 2.
-* ~~Put Étape 3 de 3 (progress bar 2/3 full) when user starts submitting images.~~
-* ~~Étape 3 de 3 (progress bar 3/3 full) when images are all in, i.e., when Finalisez Soumission is clicked?~~ When complete tag is true, progress bar becomes full and green and there is a "Merci, soumission complète!" title replacing the Etapes title -- on all screens that have a progress bar.
-* ~~Notification of completion~~
-* ~~Way for user to finalize submission/step 3; a way for user and app to do a sort of handshake, agreeing on one side that the submission is valid; on the other side that the user considers themselves done. Link could set a field in submission object of "complete." (They can still return to edit submission if they want)~~
-* ~~Made homesite and document links open on new pages~~
-* ~~Made Continuez Soumission button (on profile page) read Revisez Soumission if the sub is complete~~
-* ~~In addition to "On any page where the user is logged on, that isn't the profile page, there is a profile link in the menu bar now" as below, there is also a "Retournez aux Document" buttons on the image page~~
-* ~~Added "Retournez aux Documents", "Profile", and also "Retournez aux Image" to menu bar for all states where submission is complete; also in that case they show which of those is active.~~
-
-##Profile
-* ~~Change Femme/Homme to a radio button~~
-
+# Still to-do:
 ## Document Submission
-* ~~Make file uploads in submissions~~
-* The Edit submissions page should display the currently uploaded document filenames, and ~~should not break if the user changes their mind and clicks "enregistrer modifications" without having made any modifications.~~
-* ~~How does one access the profile page from the submissions pages?~~ On any page where the user is logged on, that isn't the profile page, there is a profile link in the menu bar now.
-
-##Image loader
-* ~~The image-saving button currently named "Déposer soumission" on the submission show page should be renamed "Ajouter Images" and it should only appear if JS is disabled~~
-* ~~Image loader needs explanations, french text~~
-* ~~The ability to remove images needs to be added~~
-* ~~Adding images should not be on the display submission page but rather on a new (or add) images page~~
-* ~~A list of filenames of images should be displayed as well as the thumbnails~~
+* The Edit submissions page should display the currently uploaded document filenames (if easily done)
 
 ##Validations
-* For images: ~~type~~, number, ~~size (pixel dimensions min/max; filesize max)~~, possibly filename format, ~~uniqueness of filename.~~
-* Others: ~~presence of all the profile info~~; some basic checks perhaps. ~~Presence of all the required documents.~~
-* ~~Handle/display-to-user validation failures~~ Displayed and internationalized.
+* Number of images?
 
-##Admin
-* ~~Notably, the restriction of access to appropriate pages~~
-* ~~Ability, at the minimum, to be able to delete accounts; other "housekeeping" capabilities.~~
 
+## Error handling
+* It would be nice, if possible, if errors were just displayed in English if I18n data not found, instead of the message breaking. But since it doesn't break the app, just makes the message messy, this is not essential for the MVP.
 
 ##Processing of data collected
+* We have a nice UI now, and the ability to produce a csv digest of user info. Remains to be discussed with Shahla whether we need to produce a zip file of artist documents and images.
+
+# Archive: everything below is all done!!!
+### Menu bar functionality
+* Make the calling of the pre-method check_user_login more universal
+* Finish implementing the menu bar functionality Paula was working on:
+	* On profile page, if currently logged-on user has a submission in progress, the menu bar should give access to **Editez Soumission**; otherwise, the menu bar should give access to **Créez Soumission**. Decided to not implement in order to keep UI streamlined.
+* More menu bar functionality: for example root menu bar should allow possibility to access profile, to access submission, if the user is logged on, instead of leaving them with nowhere to go but to log off.Instead, redefined root path to point to profile.
+
+### More navigation
+* Breadcrumbs -- Étape 1 (profile), 2 (text documents submission), 3 (images)
+* Put Étape 3 de 3 (progress bar 2/3 full) when user starts submitting images.
+* Étape 3 de 3 (progress bar 3/3 full) when images are all in, i.e., when Finalisez Soumission is clicked? When complete tag is true, progress bar becomes full and green and there is a "Merci, soumission complète!" title replacing the Etapes title -- on all screens that have a progress bar.
+* Notification of completion
+* Way for user to finalize submission/step 3; a way for user and app to do a sort of handshake, agreeing on one side that the submission is valid; on the other side that the user considers themselves done. Link could set a field in submission object of "complete." (They can still return to edit submission if they want)
+* Made homesite and document links open on new pages
+* Made Continuez Soumission button (on profile page) read Revisez Soumission if the sub is complete
+* In addition to "On any page where the user is logged on, that isn't the profile page, there is a profile link in the menu bar now" as below, there is also a "Retournez aux Document" buttons on the image page
+* Added "Retournez aux Documents", "Profile", and also "Retournez aux Image" to menu bar for all states where submission is complete; also in that case they show which of those is active.
+
+###Profile
+* Change Femme/Homme to a radio button
+
+### Document Submission
+* Make file uploads in submissions
+* The Edit submissions page should not break if the user changes their mind and clicks "enregistrer modifications" without having made any modifications.
+* How does one access the profile page from the submissions pages? On any page where the user is logged on, that isn't the profile page, there is a profile link in the menu bar now.
+
+###Image loader
+* The image-saving button currently named "Déposer soumission" on the submission show page should be renamed "Ajouter Images" and it should only appear if JS is disabled
+* Image loader needs explanations, french text
+* The ability to remove images needs to be added
+* Adding images should not be on the display submission page but rather on a new (or add) images page
+* A list of filenames of images should be displayed as well as the thumbnails
+
+###Validations
+* For images: type, size (pixel dimensions min/max; filesize max), uniqueness of filename.
+* Others: presence of all the profile info. Presence of all the required documents.
+* Handle/display-to-user validation failures: Displayed and internationalized.
+
+###Admin
+* Notably, the restriction of access to appropriate pages
+* Ability, at the minimum, to be able to delete accounts; other "housekeeping" capabilities.
+
+###Processing of data collected
 * This can in principle -- as long as we are confident that what we want to do is feasible -- wait or be refined later; the first priority is to get the submissions-receiving end up in September, so that we can open submisisons
 * Ahmed notes that it could be both nicer and at the same time easier to implement if we do things in a more modern way (nice display of data) rather than insisting that the process mirror the existing way of doing things (producing a CSV file of the artist data and a folder of folders of artist documents and images)
-* Need to discuss this with Shahla
-
-# To think about:
-* Default errors to english if not found, not breaking
-* More menu bar functionality
+* We have a nice UI now, and the ability to produce a csv digest of user info. Remains to be discussed with Shahla whether we need to produce a zip file of artist documents and images.
