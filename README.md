@@ -22,7 +22,7 @@ The admin team at Voix Visuelle will have most of the work already done for them
 * ~~Made homesite and document links open on new pages~~
 * ~~Made Continuez Soumission button (on profile page) read Revisez Soumission if the sub is complete~~
 * ~~In addition to "On any page where the user is logged on, that isn't the profile page, there is a profile link in the menu bar now" as below, there is also a "Retournez aux Document" buttons on the image page~~
-* ~~Added "Retournez aux Documents", "Profile", and also "Retournez aux Image" to menu bar for all states where submission is complete; also in that case they show which of those is active. ~~
+* ~~Added "Retournez aux Documents", "Profile", and also "Retournez aux Image" to menu bar for all states where submission is complete; also in that case they show which of those is active.~~
 
 ##Profile
 * ~~Change Femme/Homme to a radio button~~
@@ -41,12 +41,12 @@ The admin team at Voix Visuelle will have most of the work already done for them
 
 ##Validations
 * For images: ~~type~~, number, ~~size (pixel dimensions min/max; filesize max)~~, possibly filename format, ~~uniqueness of filename.~~
-* Others: ~~presence of all the profile info~~; some basic checks perhaps. Presence of all the required documents.
+* Others: ~~presence of all the profile info~~; some basic checks perhaps. ~~Presence of all the required documents.~~
 * ~~Handle/display-to-user validation failures~~ Displayed and internationalized.
 
 ##Admin
-* Notably, the restriction of access to appropriate pages
-* Ability, at the minimum, to be able to delete accounts; other "housekeeping" capabilities.
+* ~~Notably, the restriction of access to appropriate pages~~
+* ~~Ability, at the minimum, to be able to delete accounts; other "housekeeping" capabilities.~~
 
 
 ##Processing of data collected
@@ -55,5 +55,5 @@ The admin team at Voix Visuelle will have most of the work already done for them
 * Need to discuss this with Shahla
 
 # To think about:
-
+* Default errors to english if not found, not breaking
 * More menu bar functionality

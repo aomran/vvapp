@@ -31,7 +31,7 @@
         <% if current_page?('/submission/images') || safe_test %>
           <li class="<%= 'active' if current_page?('/submission') %>"><a href="/submission">Retournez aux Documents</a></li>
         <% end %>
-        <% if current_page?('/profile') || safe_test %>
+        <% if !current_page?('/profile') || safe_test %>
           <li class="<%= 'active' if current_page?('/profile') %>"><a href="/profile">Profile</a></li>
         <% end %>
         <li><a href="/logout">Se déconnecter</a></li>

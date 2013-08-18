@@ -1,4 +1,8 @@
 fr:
+  errors:
+    messages:
+      extension_white_list_error: "-- Fichiers %{extension} ne sont pas permis; seulement %{allowed_types} sont permis"
+
   activerecord:
     models:
       user: "compte d'utilisateur"
@@ -20,7 +24,10 @@ fr:
         image_list: "Liste d'Images"
         expo_project: "Projet d'Exposition"
         artist_statement: "Démarche d'Artiste"
+        special_needs: "Exigences spéciales"
+
     errors:
+
       models:
         user:
           attributes:
