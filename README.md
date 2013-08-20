@@ -10,15 +10,22 @@ The admin team at Voix Visuelle will have most of the work already done for them
 ## Document Submission
 * The Edit submissions page should display the currently uploaded document filenames (if easily done)
 
-##Validations
-* Number of images?
+## Misc
+* Work in minor changes suggested by Shahla
 
 
 ## Error handling
-* It would be nice, if possible, if errors were just displayed in English if I18n data not found, instead of the message breaking. But since it doesn't break the app, just makes the message messy, this is not essential for the MVP.
+* Work on making French translation of errors as fail-proof as possible
 
 ##Processing of data collected
-* We have a nice UI now, and the ability to produce a csv digest of user info. Remains to be discussed with Shahla whether we need to produce a zip file of artist documents and images.
+* The csv export needs to be formatted
+
+##Video
+* Put up validation (and text describing criteria) for video file types etc once Shahla has decided what she wants.
+
+##Final implementation:
+* Amazon S3 file handling
+* Put it live on a server
 
 # Archive: everything below is all done!!!
 ### Menu bar functionality
@@ -57,6 +64,7 @@ The admin team at Voix Visuelle will have most of the work already done for them
 * For images: type, size (pixel dimensions min/max; filesize max), uniqueness of filename.
 * Others: presence of all the profile info. Presence of all the required documents.
 * Handle/display-to-user validation failures: Displayed and internationalized.
+* Number of images? As per discussion with Shahla, we are omitting this.
 
 ###Admin
 * Notably, the restriction of access to appropriate pages
