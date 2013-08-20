@@ -1,11 +1,12 @@
 <%= render partial: 'shared/progressbar', locals: { bar_percent: 66, step: "Étape 3 de 3"}%>
 
-<p>Utilisez les boutons "Choose File/Choisissez fichier" ou
-  glisser-déposer les fichier d'images dans la boîte bleue.</p>
+<p>Utilisez le boutons blanc ou
+  glissez-déposez vos fichier d'images dans la boîte verte qui l'entoure.</p>
 
 <p>En glissant-déposant, plusieurs images peuvent être ajoutés d'un coup. </p>
 
-<p>Le mode glisser-déposer marche seulement si Javascript est activé dans votre browser. Le cas échéant, il faut utilser le bouton "Ajouter Images". </p>
+<p>Le mode glisser-déposer marche seulement si Javascript est activé dans votre browser.</br>
+  (Le cas échéant, il faut utiliser le bouton "Ajouter Images".)</p>
 
 <p>Un dossier doit comprendre 20 images numériques, ou 10 minutes maximum de documentation vidéo.</p>
 <p>Les images numériques doivent:</p>
@@ -21,7 +22,7 @@
 <%= form_for [@submission, Image.new], html: {class: 'form-horizontal'} do |f| %>
 
   <div class="control-group">
-    <%= f.label :image_file, "Fichiers d'Images", :class => "control-label" %>
+    <%= f.label :image_file, "Fichiers d'images", :class => "control-label" %>
     <div class="controls"><%= f.file_field :image_file, multiple: true, name: "image[image_file]" %>
     </div>
   </div>
@@ -32,7 +33,7 @@
   </noscript>
 
 <% end %>
-<%= button_to 'Finalisez Soumission', complete_submission_path, class: "btn btn-primary btn-large  btn-right", id: "btn-Finalize_Sub"%>
+<%= button_to 'Finalisez soumission', complete_submission_path, class: "btn btn-primary btn-large  btn-right", id: "btn-Finalize_Sub"%>
 
 <div class="images">
   <%= render @submission.images %>

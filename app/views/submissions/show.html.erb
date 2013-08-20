@@ -20,16 +20,16 @@
 
   <% if @submission.special_needs.file %>
   <tr>
-    <td><%= link_to 'Exigences Spéciales', @submission.special_needs.url, :target => "_blank" %> </td>
+    <td><%= link_to 'Exigences spéciales', @submission.special_needs.url, :target => "_blank" %> </td>
   </tr>
   <% end %>
 
   <tr>
-    <td><%= link_to "Liste d'Images", @submission.image_list.url, :target => "_blank" %> </td>
+    <td><%= link_to "Liste d'images", @submission.image_list.url, :target => "_blank" %> </td>
   </tr>
 </table>
 </div>
 
-<%= link_to raw('<i class="icon-edit"></i> Editez Soumission'), edit_submission_path, class: "btn btn-small btn-inverse", id: "link-Edit_Sub"%>
+<%= link_to raw('<i class="icon-edit"></i> Editez soumission'), edit_submission_path, class: "btn btn-small btn-inverse", id: "link-Edit_Sub"%>
 
-<%= link_to 'Ajoutez Images', submission_images_path, class: "btn btn-primary btn-large", id: "link-Add_Images"%>
+<%= link_to 'Ajoutez images', submission_images_path, class: "btn btn-primary btn-large", id: "link-Add_Images"%>

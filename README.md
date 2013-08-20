@@ -13,7 +13,6 @@ The admin team at Voix Visuelle will have most of the work already done for them
 ## Misc
 * Work in minor changes suggested by Shahla
 
-
 ## Error handling
 * Work on making French translation of errors as fail-proof as possible
 
@@ -26,6 +25,7 @@ The admin team at Voix Visuelle will have most of the work already done for them
 ##Final implementation:
 * Amazon S3 file handling
 * Put it live on a server
+* Put in text/link on main VV site pointing to it
 
 # Archive: everything below is all done!!!
 ### Menu bar functionality

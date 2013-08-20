@@ -10,14 +10,14 @@
 
     <div class="control-group">
       <%= f.label :artist_statement, "Démarche", :class => "control-label" %>
-      <div class="controls"><%= f.file_field :artist_statement %> Démarche d'Artiste (un page)
+      <div class="controls"><%= f.file_field :artist_statement %> Démarche d'artiste (une page)
       <%= f.hidden_field :artist_statement_cache %>
       </div>
     </div>
 
     <div class="control-group">
       <%= f.label :expo_project, "Projet", :class => "control-label" %>
-      <div class="controls"><%= f.file_field :expo_project %> Projet d'Exposition
+      <div class="controls"><%= f.file_field :expo_project %> Projet d'exposition (une page)
       <%= f.hidden_field :expo_project_cache %>
       </div>
     </div>
@@ -30,8 +30,8 @@
     </div>
 
     <div class="control-group">
-      <%= f.label :image_list, "Liste d'Images", :class => "control-label" %>
-      <div class="controls"><%= f.file_field :image_list %>
+      <%= f.label :image_list, "Liste d'images", :class => "control-label" %>
+      <div class="controls"><%= f.file_field :image_list %> Numéro d'image, Titre, Année de création, Techniques, Dimensions
       <%= f.hidden_field :image_list_cache %>
       </div>
     </div>

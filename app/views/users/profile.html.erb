@@ -30,7 +30,7 @@
   </tr>
 
   <tr>
-    <td>Code Postal: </td>
+    <td>Code postal: </td>
     <td> <%= @current_user.postal_code %></td>
   </tr>
 
@@ -51,11 +51,11 @@
 
   <% if @current_user.has_submission? %>
     <% if @current_user.recent_submission.complete %>
-      <%= link_to 'Revisez Soumission', submission_path, class: 'btn btn-large btn-primary' %>
+      <%= link_to 'Revisez soumission', submission_path, class: 'btn btn-large btn-primary' %>
     <% else %>
-      <%= link_to 'Continuez Soumission', submission_path, class: 'btn btn-large btn-primary', id: "link-Continue_Sub" %>
+      <%= link_to 'Continuez soumission', submission_path, class: 'btn btn-large btn-primary', id: "link-Continue_Sub" %>
     <% end %>
   <% else %>
-    <%= link_to 'Commencez Dossier', new_submission_path, class: 'btn btn-large btn-primary' %>
+    <%= link_to 'Commencez dossier', new_submission_path, class: 'btn btn-large btn-primary' %>
   <% end %>
    </div>
