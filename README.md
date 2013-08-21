@@ -13,9 +13,6 @@ The admin team at Voix Visuelle will have most of the work already done for them
 ## Error handling
 * Work on making French translation of errors as fail-proof as possible
 
-##Processing of data collected
-* The csv export needs to be formatted
-
 ##Jury Accounts
 * Limited (read-only) admin accounts for jury members need to be set up.
 
@@ -74,6 +71,8 @@ The admin team at Voix Visuelle will have most of the work already done for them
 * This can in principle -- as long as we are confident that what we want to do is feasible -- wait or be refined later; the first priority is to get the submissions-receiving end up in September, so that we can open submisisons
 * Ahmed notes that it could be both nicer and at the same time easier to implement if we do things in a more modern way (nice display of data) rather than insisting that the process mirror the existing way of doing things (producing a CSV file of the artist data and a folder of folders of artist documents and images)
 * We have a nice UI now, and the ability to produce a csv digest of user info. Remains to be discussed with Shahla whether we need to produce a zip file of artist documents and images.
+
+* The csv export is formatted
 
 ### Misc
 * Work in minor changes suggested by Shahla

@@ -14,6 +14,20 @@ ActiveAdmin.register User do
     default_actions
   end
 
+  csv do
+    column :first_name
+    column :last_name
+    column :email
+    column :gender
+    column :phone_number
+    column :street_address
+    column :city
+    column :province
+    column :postal_code
+    column :country
+    column :created_at
+  end
+
   form do |f|
     f.inputs do
       f.input :first_name
