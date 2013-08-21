@@ -18,7 +18,7 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     attach_file "Démarche", "#{Rails.root}/test/fixtures/documents/statement.pdf"
     attach_file "Projet", "#{Rails.root}/test/fixtures/documents/expo.pdf"
     attach_file "Exigences spéciales (optionelle)", "#{Rails.root}/test/fixtures/documents/special.pdf"
-    attach_file "Liste d'Images", "#{Rails.root}/test/fixtures/documents/image_list.pdf"
+    attach_file "Liste d'images", "#{Rails.root}/test/fixtures/documents/image_list.pdf"
 
     assert_difference 'Submission.count' do
       click_button 'Submit_submission'
@@ -61,7 +61,7 @@ class ArtSubmissionsTest < Capybara::Rails::TestCase
     attach_file "Démarche", "#{Rails.root}/test/fixtures/documents/statement_new.pdf"
     attach_file "Projet", "#{Rails.root}/test/fixtures/documents/expo_new.pdf"
     attach_file "Exigences spéciales (optionelle)", "#{Rails.root}/test/fixtures/documents/special_new.pdf"
-    attach_file "Liste d'Images", "#{Rails.root}/test/fixtures/documents/image_list_new.pdf"
+    attach_file "Liste d'images", "#{Rails.root}/test/fixtures/documents/image_list_new.pdf"
     click_button 'Submit_submission'
 
     assert current_path == submission_path, 'Did not go to the show submission page after edit'

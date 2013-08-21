@@ -12,7 +12,7 @@ class SubmissionImagesTest < Capybara::Rails::TestCase
     click_link 'link-Add_Images'
     assert current_path == submission_images_path
 
-    attach_file "Fichiers d'Images", "#{Rails.root}/test/fixtures/images/#{image}"
+    attach_file "Fichiers d'images", "#{Rails.root}/test/fixtures/images/#{image}"
   end
 
   test "artist can add images to submission" do
