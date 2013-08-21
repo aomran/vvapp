@@ -2,7 +2,7 @@
 
 <h1>Page soumission pour <%= @current_user.first_name + " " + @current_user.last_name%></h1>
 <h2>Faites votre soumission de dossier:</h2>
-<p>Utilisez les boutons blancs pour ajouter vos documents. Format .doc ou .pdf seulement.</p>
+<p>Utilisez les boutons blancs pour ajouter vos documents. Format .pdf ou .doc seulement (de preference .pdf).</p>
 <p>Toutes les documents sont requis sauf les Exigences spéciales.</p>
 
 <%= render partial: 'form', locals: { submit_text: 'Déposez soumission'} %>
