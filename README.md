@@ -12,12 +12,9 @@ The admin team at Voix Visuelle will have most of the work already done for them
 
 ## Error handling
 * Work on making French translation of errors as fail-proof as possible
-* Edit profile: with password filled in and confirm pw not filled in, gives error "First argument in form cannot contain nil or be empty"
-ditto if pw and confirm pw don't match
+* ~~Edit profile: with password filled in and confirm pw not filled in, gives error "First argument in form cannot contain nil or be empty". Same thing if pw and confirm pw don't match~~
 
 ## Password changing/reset
-* should be removed from edit profile
-* changing pw should require old pw, new pw, and confirmation of new pw
 * there should be some pw reset functionality for ppl who have forgotten pw
 
 ##Jury Accounts

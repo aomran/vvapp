@@ -48,5 +48,29 @@ class ArtistUserAccountsTest < Capybara::Rails::TestCase
     assert current_path == profile_path
     user = User.find(users(:paula).id)
     assert user.first_name == 'PAULA', 'First name was not updated'
+    assert user.authenticate('password453')
+  end
+
+  test "a logged-in artist gets form errors if their profile edits are invalid" do
+    login_as(users(:paula))
+
+    click_link('Editer profile')
+
+    fill_in :user_first_name, with: 'PAULA'
+    fill_in :user_last_name, with: ''
+    fill_in :user_email, with: 'paula@little.com'
+    fill_in :user_password, with: 'password453'
+    fill_in :user_password_confirmation, with: 'password453'
+    fill_in :user_phone_number, with: '(819)667-9967'
+    fill_in :user_street_address, with: '99 Something dr.'
+    fill_in :user_city, with: 'Batineau'
+    fill_in :user_province, with: 'Huebec'
+    fill_in :user_postal_code, with: 'A8G5H6'
+    fill_in :user_country, with: 'Huebec'
+    choose 'Femme'
+    click_button 'Inscription'
+
+    print html
+    assert page.has_content?('Nom de famille manquant')
   end
 end

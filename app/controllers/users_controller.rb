@@ -28,6 +28,7 @@ class UsersController < ApplicationController
     if @current_user.update(user_params)
       redirect_to profile_path, notice: "Vous avez réussi à éditer votre information d'utilisateur."
     else
+      @user = @current_user
       render :edit_profile
     end
   end
