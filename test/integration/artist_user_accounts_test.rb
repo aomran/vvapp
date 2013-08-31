@@ -70,7 +70,6 @@ class ArtistUserAccountsTest < Capybara::Rails::TestCase
     choose 'Femme'
     click_button 'Inscription'
 
-    print html
     assert page.has_content?('Nom de famille manquant')
   end
 end

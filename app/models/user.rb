@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   # similarly don't force gender validation
   # finally, don't force province validation
   validates  :last_name, :email, :phone_number, :street_address, :city, :postal_code, :country, presence: true
+  validates :email, uniqueness: true
+
   has_secure_password
 
   def has_submission?
