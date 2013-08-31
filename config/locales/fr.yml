@@ -35,6 +35,7 @@ fr:
               blank: "manquant"
             email:
               blank: "manquant"
+              taken: "est déjà pris"
             phone_number:
               blank: "manquant"
             street_address:

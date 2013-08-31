@@ -34,7 +34,11 @@ class UserTest < ActiveSupport::TestCase
     assert @blank_user.errors[:country].any?
   end
 
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should send password reset" do
+    user = users(:paula)
+    user.send_password_reset
+
+    assert user.password_reset_token
+    assert user.password_reset_sent_at
+  end
 end

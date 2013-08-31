@@ -1,5 +1,6 @@
 Vvapp::Application.routes.draw do
 
+  get "password_resets/new"
   root 'users#profile'
 
   # ADMIN Routes
@@ -22,6 +23,9 @@ Vvapp::Application.routes.draw do
   get "/login", to: "sessions#new", as: "login"
   post "/login", to: "sessions#create"
   get '/logout', to: "sessions#destroy"
+
+  # Password Reset
+  resources :password_resets
 
   # USER Routes
   resources :users, only: [:new, :create]

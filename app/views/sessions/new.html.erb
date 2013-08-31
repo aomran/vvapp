@@ -11,6 +11,7 @@
         <%= label_tag :password, "Mot de passe", :class => "control-label" %>
         <div class="controls"><%= password_field_tag :password %></div>
       </div>
+      <p><%= link_to "Mot de passe oublié?", new_password_reset_path, id: 'password-reset' %></p>
       <div class="control-group">
         <div class="controls"><%= submit_tag "Connexion", class: "btn btn-small btn-inverse", id: "btn-Connect"%></div>
       </div>

@@ -72,4 +72,15 @@ class ArtistUserAccountsTest < Capybara::Rails::TestCase
 
     assert page.has_content?('Nom de famille manquant')
   end
+
+  test "An artist who forgot their password can get a reset email" do
+    visit login_path
+    click_link 'password-reset'
+
+    fill_in :email, with: 'paula@Lilfrenchy.com'
+    click_button 'password-reset-button'
+
+    assert page.has_content?('Courriel envoyé avec des instructions pour mettre à jour votre mot de passe')
+
+  end
 end
