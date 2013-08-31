@@ -15,7 +15,7 @@ The admin team at Voix Visuelle will have most of the work already done for them
 * ~~Edit profile: with password filled in and confirm pw not filled in, gives error "First argument in form cannot contain nil or be empty". Same thing if pw and confirm pw don't match~~
 
 ## Password changing/reset
-* there should be some pw reset functionality for ppl who have forgotten pw
+* ~~there should be some pw reset functionality for ppl who have forgotten pw~~
 
 ##Jury Accounts
 * Limited (read-only) admin accounts for jury members need to be set up.

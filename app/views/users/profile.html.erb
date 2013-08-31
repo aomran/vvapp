@@ -5,6 +5,11 @@
   <div class="table-profile">
   <table class="table table-striped">
   <tr>
+    <td>Nom: </td>
+    <td> <%= @current_user.first_name + " " + @current_user.last_name%></td>
+  </tr>
+
+  <tr>
     <td>Courriel: </td>
     <td> <%= @current_user.email %></td>
   </tr>
