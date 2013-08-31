@@ -60,6 +60,8 @@ gem 'dynamic_form'
 # gem 'unicorn'
 
 gem 'activeadmin', github: 'gregbell/active_admin', branch: 'rails4'
+gem "fog", "~> 1.3.1"
+gem "nokogiri", "~> 1.5.0"
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
