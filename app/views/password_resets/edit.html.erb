@@ -1,15 +1,15 @@
-<h1>Mettre à jour votre mot de passe</h1>
+<h1>Mettez à jour votre mot de passe</h1>
 
 <%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
   <%= f.error_messages %>
 
   <div class="control-group">
-    <%= f.label :password, "Mot de passe", :class => "control-label" %>
+    <%= f.label :password, "Nouveau mot de passe", :class => "control-label" %>
     <div class="controls"> <%= f.password_field :password %> </div>
   </div>
 
   <div class="control-group">
-    <%= f.label :password_confirmation, "Confirmez mot de passe", :class => "control-label" %>
+    <%= f.label :password_confirmation, "Confirmez nouveau mot de passe", :class => "control-label" %>
     <div class="controls"> <%= f.password_field :password_confirmation %> </div>
   </div>
   <div class="control-group">

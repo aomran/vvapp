@@ -8,6 +8,6 @@ class UserMailer < ActionMailer::Base
   #
   def password_reset(user)
     @user = user
-    mail :to => user.email, :subject => "Mettre à jour votre mot de passe"
+    mail :to => user.email, :subject => "Comment mettre à jour votre mot de passe"
   end
 end
