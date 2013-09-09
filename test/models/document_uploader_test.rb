@@ -2,6 +2,7 @@ require 'test_helper'
 
 class DocumentUploaderTest < ActiveSupport::TestCase
   test "non pdf/doc documents are not stored" do
+    Fog.mock!
     submission = Submission.new
     uploader = DocumentUploader.new(submission, :cv)
 
