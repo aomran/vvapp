@@ -25,6 +25,7 @@ fr:
         expo_project: "Projet d'Exposition"
         artist_statement: "Démarche d'Artiste"
         special_needs: "Exigences spéciales"
+        video_link: "Lien Video"
 
     errors:
 
