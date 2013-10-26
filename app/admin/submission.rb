@@ -29,7 +29,7 @@ ActiveAdmin.register Submission do
       end
     end
     column :video_link do |sub|
-      link_to "Lien Video", sub.video_link
+      link_to "Lien Video", sub.video_link if sub.video_link
     end
     column :created_at
     column :complete
