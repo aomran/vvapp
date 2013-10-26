@@ -50,6 +50,6 @@ class SubmissionsController < ApplicationController
   end
 
   def submission_params
-    params.require(:submission).permit(:cv, :artist_statement, :expo_project, :special_needs, :image_list, :images_attributes => [:image_file])
+    params.require(:submission).permit(:cv, :artist_statement, :expo_project, :special_needs, :video_link, :image_list, :images_attributes => [:image_file])
   end
 end

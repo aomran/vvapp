@@ -30,11 +30,18 @@
     </div>
 
     <div class="control-group">
-      <%= f.label :image_list, "Liste d'images", :class => "control-label" %>
-      <div class="controls"><%= f.file_field :image_list %>N<sup>o</sup> d'image, Titre, Année de création, Techniques, Dimensions
+      <%= f.label :image_list, "Liste d'images/video", :class => "control-label" %>
+      <div class="controls"><%= f.file_field :image_list %> N<sup>o</sup> d'image, Titre, Année de création, Techniques, Dimensions
       <%= f.hidden_field :image_list_cache %>
       </div>
     </div>
+
+    <div class="control-group">
+      <%= f.label :video_link, "Lien pour soumission video (optionelle SI vous soumettez images)", :class => "control-label" %>
+      <div class="controls"><%= f.text_field :video_link %> Lien à votre soumission video (maximum 10 minutes) sur Youtube <a href="http://voixvisuelle.ca/instructions-pour-documentation-video/" target="_blank">Instructions</a>
+      </div>
+    </div>
+
   </div>
   <div class="control-group">
     <div class="controls"> <%= f.submit submit_text,class: "btn btn-small btn-inverse", id: "Submit_submission"  %></div>

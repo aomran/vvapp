@@ -7,11 +7,7 @@ ActiveAdmin.register Submission do
       end
     end
 
-    column :images do |sub|
-      if sub.images
-        link_to "See Images", admin_submission_images_path(sub)
-      end
-    end
+
     column :cv do |sub|
       link_to 'CV', sub.cv.url
     end
@@ -26,6 +22,14 @@ ActiveAdmin.register Submission do
     end
     column :image_list do |sub|
       link_to "Liste d'Images", sub.image_list.url
+    end
+    column :images do |sub|
+      if sub.images
+        link_to "Voir Images", admin_submission_images_path(sub)
+      end
+    end
+    column :video_link do |sub|
+      link_to "Lien Video", sub.video_link
     end
     column :created_at
     column :complete

@@ -24,9 +24,18 @@
   </tr>
   <% end %>
 
+  <% if @submission.image_list.file %>
   <tr>
     <td><%= link_to "Liste d'images", @submission.image_list.url, :target => "_blank" %> </td>
   </tr>
+  <% end %>
+
+  <% if @submission.video_link %>
+  <tr>
+    <td><%= link_to "Lien video", @submission.video_link, :target => "_blank" %> </td>
+  </tr>
+  <% end %>
+
 </table>
 </div>
 
