@@ -51,6 +51,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'dynamic_form'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'cancan'
 gem "fog", "~> 1.3.1"
 gem "nokogiri", "~> 1.5.0"
 gem 'newrelic_rpm'
