@@ -8,5 +8,5 @@ class Submission < ActiveRecord::Base
   mount_uploader :special_needs, DocumentUploader
   mount_uploader :image_list, DocumentUploader
 
-  validates :cv, :image_list, :expo_project, :artist_statement, presence: true
+  validates :cv, :image_list, :artist_statement, presence: true
 end

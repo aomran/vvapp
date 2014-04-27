@@ -3,45 +3,45 @@
   <div class="profile-form">
     <div class="control-group">
       <%= f.label :cv, "CV", :class => "control-label" %>
-      <div class="controls"><%= f.file_field :cv %> Curriculum vitae (trois pages maximum)
+      <div class="controls"><%= f.file_field :cv %> Curriculum vitae (deux pages maximum)
       <%= f.hidden_field :cv_cache %>
       </div>
     </div>
 
     <div class="control-group">
       <%= f.label :artist_statement, "Démarche", :class => "control-label" %>
-      <div class="controls"><%= f.file_field :artist_statement %> Démarche d'artiste (une page)
+      <div class="controls"><%= f.file_field :artist_statement %> Démarche artistique incluant votre intention de projet (150 mots)
       <%= f.hidden_field :artist_statement_cache %>
       </div>
     </div>
 
-    <div class="control-group">
+<!--     <div class="control-group">
       <%= f.label :expo_project, "Projet", :class => "control-label" %>
       <div class="controls"><%= f.file_field :expo_project %> Projet d'exposition (une page)
       <%= f.hidden_field :expo_project_cache %>
       </div>
-    </div>
+    </div> -->
 
-    <div class="control-group">
+<!--     <div class="control-group">
       <%= f.label :special_needs, "Exigences spéciales (optionelle)", :class => "control-label" %>
       <div class="controls"><%= f.file_field :special_needs %> Toute exigence spéciale pour l'installation
       <%= f.hidden_field :special_needs_cache %>
       </div>
-    </div>
+    </div> -->
 
     <div class="control-group">
-      <%= f.label :image_list, "Liste d'images/video", :class => "control-label" %>
-      <div class="controls"><%= f.file_field :image_list %> N<sup>o</sup> d'image, Titre, Année de création, Techniques, Dimensions
+      <%= f.label :image_list, "Liste détaillée de la documentation visuelle", :class => "control-label" %>
+      <div class="controls"><%= f.file_field :image_list %> N<sup>o</sup> d'image, Titre, et Annotations
       <%= f.hidden_field :image_list_cache %>
       </div>
     </div>
 
-    <div class="control-group">
+<!--     <div class="control-group">
       <%= f.label :video_link, "Lien pour soumission video (optionelle SI vous soumettez images)", :class => "control-label" %>
       <div class="controls"><%= f.text_field :video_link %> Lien à votre soumission video (maximum 10 minutes) sur Youtube <a href="http://voixvisuelle.ca/instructions-pour-documentation-video/" target="_blank">Instructions</a>
       </div>
     </div>
-
+ -->
   </div>
   <div class="control-group">
     <div class="controls"> <%= f.submit submit_text,class: "btn btn-small btn-inverse", id: "Submit_submission"  %></div>

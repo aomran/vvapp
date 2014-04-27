@@ -13,16 +13,16 @@
   <tr>
     <td><%= link_to 'Démarche', @submission.artist_statement.url, :target => "_blank" %> </td>
   </tr>
-
+<!--
   <tr>
     <td><%= link_to 'Projet', @submission.expo_project.url, :target => "_blank" %> </td>
-  </tr>
+  </tr> -->
 
-  <% if @submission.special_needs.file %>
+<!--   <% if @submission.special_needs.file %>
   <tr>
     <td><%= link_to 'Exigences spéciales', @submission.special_needs.url, :target => "_blank" %> </td>
   </tr>
-  <% end %>
+  <% end %> -->
 
   <% if @submission.image_list.file %>
   <tr>
@@ -30,11 +30,11 @@
   </tr>
   <% end %>
 
-  <% if @submission.video_link %>
+<!--   <% if @submission.video_link %>
   <tr>
     <td><%= link_to "Lien video", @submission.video_link, :target => "_blank" %> </td>
   </tr>
-  <% end %>
+  <% end %> -->
 
 </table>
 </div>

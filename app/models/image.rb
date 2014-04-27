@@ -7,16 +7,18 @@ class Image < ActiveRecord::Base
   validates :file_name, uniqueness: true
 
   def image_dimensions
-    if width > 1024
-      errors.add(:width, "Vous ne pouvez pas attacher une image avec une largeur plus grande que 1024px")
+    if width < 1500 || height < 1500
+      errors.add(:width, "Vous ne pouvez pas attacher une image qui a une dimension (largeur ou hauteur) plus petit que 1500px")
     end
-    if height > 768
-      errors.add(:height, "Vous ne pouvez pas attacher une image avec une hauteur plus grande que 768px")
+    if width < 2100 && height < 2100
+      errors.add(:width, "Vous ne pouvez pas attacher une image qui n'a pas au moins une dimension (largeur ou hauteur) 2100px ou plus grande")
     end
-    if width < 750 && height < 750
-      errors.add(:width, "Vous ne pouvez pas attacher une image qui n'a pas au moins une dimension (largeur ou hauteur) plus grande que 750px")
+    if width > 3300 || height > 3300
+      errors.add(:width, "Vous ne pouvez pas attacher une image qui a une dimension (largeur ou hauteur) plus grand que 3300px")
     end
-
+    if width > 2550 && height > 2550
+      errors.add(:width, "Vous ne pouvez pas attacher une image qui n'a pas au moins une dimension (largeur ou hauteur) 2550px ou plus petit")
+    end
   end
 
 end

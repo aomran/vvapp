@@ -1,24 +1,22 @@
 <%= render partial: 'shared/progressbar', locals: { bar_percent: 66, step: "Étape 3 de 3"}%>
 
 <p>Utilisez le boutons blanc ou
-  glissez-déposez vos fichier d'images dans la boîte verte qui l'entoure.</p>
+  glissez-déposez vos fichiers d'image dans la boîte verte qui l'entoure.</p>
 
 <p>En glissant-déposant, plusieurs images peuvent être ajoutés d'un coup. </p>
 
 <p>Le mode glisser-déposer marche seulement si Javascript est activé dans votre browser.</br>
   (Le cas échéant, il faut utiliser le bouton "Ajouter Images".)</p>
 
-<p>Un dossier doit comprendre 20 images numériques, ou 10 minutes maximum de documentation vidéo.</p>
-<p> Si vous soumettez video, vous pouvez ajouter 0 à 10 images.</p>
+<p>Un dossier doit comprendre un maximum de 10 images numériques.</p>
 <p>Les images numériques doivent:</p>
 <ul>
   <li>être en format JPEG, avec extension de fichier .jpg </li>
-  <li>ne pas dépasser 1024 (largeur) x 768 (hauteur) pixels</li>
-  <li>avoir un minimum de 750 pixels dans au moins une dimension (largeur ou hauteur) </li>
-
-<li>être de mode couleur RVB, sRVB ou gamme de gris</li>
+  <li>avoir dimensions minimales 5 x 7 po (ou 7 x 5 po) avec une résolution de 300 dpi</li>
+  <li>avoir dimensions maximales 8.5 x 11 po (ou 11 x 8.5 po) avec une résolution de 300 dpi</li>
 </ul>
-<p>Chaque nom de fichier d’image doit avoir un numéro, le nom de l’artiste et le titre de l’œuvre.</p>
+<p>Chaque fichier JPEG doit laisser voir dans ses propriétés, les informations suivantes:
+date de la prise de vue; modèle d’appareil photo; temps d’exposition; vitesse iso; focale (soit f0 ou f-). Les fichiers sans propriétés ne seront pas considérés.</p>
 
 <%= form_for [@submission, Image.new], html: {class: 'form-horizontal'} do |f| %>
 
