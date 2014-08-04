@@ -6,23 +6,26 @@ Artists will be able to create accounts and store their personal information. Th
 
 The admin team at Voix Visuelle will have most of the work already done for them by the rails application, they can focus on evaluating the work and making decisions.
 
-# Still to-do:
-## Document Submission
+## Still to-do:
+
+### Document Submission
 * The Edit submissions page should display the currently uploaded document filenames (if easily done)
 
-## Error handling
+### Error handling
 * Work on making French translation of errors as fail-proof as possible
-* ~~Edit profile: with password filled in and confirm pw not filled in, gives error "First argument in form cannot contain nil or be empty". Same thing if pw and confirm pw don't match~~
 
-## Password changing/reset
-* ~~there should be some pw reset functionality for ppl who have forgotten pw~~
-
-# Archive: everything below is all done!!!
+## Archive: everything below is all done!!!
 
 ### Final implementation:
 * Amazon S3 file handling
 * Put it live on a server
 * Put in text/link on main VV site pointing to it
+
+### Error handling
+* ~~Edit profile: with password filled in and confirm pw not filled in, gives error "First argument in form cannot contain nil or be empty". Same thing if pw and confirm pw don't match~~
+
+### Password changing/reset
+* ~~there should be some pw reset functionality for ppl who have forgotten pw~~
 
 ### Jury Accounts
 * Limited (read-only) admin accounts for jury members need to be set up.
