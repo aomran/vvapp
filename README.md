@@ -17,18 +17,16 @@ The admin team at Voix Visuelle will have most of the work already done for them
 ## Password changing/reset
 * ~~there should be some pw reset functionality for ppl who have forgotten pw~~
 
-##Jury Accounts
-* Limited (read-only) admin accounts for jury members need to be set up.
+# Archive: everything below is all done!!!
 
-##Video
-* Put up validation (and text describing criteria) for video file types etc once Shahla has decided what she wants.
-
-##Final implementation:
+### Final implementation:
 * Amazon S3 file handling
 * Put it live on a server
 * Put in text/link on main VV site pointing to it
 
-# Archive: everything below is all done!!!
+### Jury Accounts
+* Limited (read-only) admin accounts for jury members need to be set up.
+
 ### Menu bar functionality
 * Make the calling of the pre-method check_user_login more universal
 * Finish implementing the menu bar functionality Paula was working on:
